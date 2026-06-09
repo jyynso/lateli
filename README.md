@@ -1,0 +1,1 @@
+- lateli is the rebuilt version of "Eikonix", developed with the purpose of learning react and its corresponding stack
