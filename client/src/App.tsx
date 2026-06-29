@@ -1,18 +1,26 @@
 import './index.css'
-import Navigation from './components/Navigation';
+import './pages/ProductsPage'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import ProductsPage from './pages/ProductsPage';
+import Navigation from './components/Navigation.tsx'
+import HomePage from './pages/HomePage.tsx'
+import Register from './pages/Register.tsx';
+import Login from './pages/Login.tsx';
 
-function App() {
-  return (
-    <div className='p-7  bg-amber-50 h-screen'>
-      <Navigation />
-      <div className='flex justify-center'>
-        <div className='text-center'>
-          <h1 className='font-bold text-9xl'>wow</h1>
-          <p className='font-semibold'>wowzers</p>
-        </div>
-      </div>
-    </div>
-  );
-}
+  function App() {
+    return (
+			<div className='flex flex-col text-(--text-black) font-archivo p-7 bg-(--bg-light) min-h-screen overflow-auto no-scrollbar'>
+				<BrowserRouter>
+					<Navigation />
+					<Routes>
+						<Route path='/' element={<HomePage />} />
+						<Route path='/products' element={<ProductsPage />} />
+						<Route path='/register' element={<Register />}/>
+						<Route path='/login' element={<Login />}/>
+					</Routes>
+				</BrowserRouter>
+			</div>
+    );
+  }
 
-export default App
+export default App;

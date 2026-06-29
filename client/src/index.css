@@ -1,1 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
+
+@theme {
+  --font-archivo: 'Archivo', sans-serif;
+  --bg-light: #EFE5DC;
+  --bg-card: #FFF3F0;
+  --text-black: #383D3B;
+  --accent-coral: #FE5F55;
+  --accent-charcoalBlue: #424C55;
+}
+
+html, body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar, 
+body::-webkit-scrollbar {
+  display: none;
+}
