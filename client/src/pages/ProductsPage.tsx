@@ -1,8 +1,22 @@
 import Artwork from '../components/Artwork';
 import SidebarFilter from '../components/SidebarFilter';
 import { MagnifyingGlassIcon } from '@phosphor-icons/react/dist/ssr';
+import { useEffect, useState } from 'react';
 
 function ProductsPage() {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    async function getProducts() {
+      const response = await fetch("http://localhost:3000/api/products");
+      const data = await response.json();
+
+      setProducts(data);
+    }
+
+    getProducts();
+  }, []);
+
   return (
     <div className=''>
       <SidebarFilter  />
@@ -13,38 +27,16 @@ function ProductsPage() {
 					<p className='font-semibold'>search...</p>
 				</span>
       <div className='mt-10 mx-auto flex flex-row flex-wrap justify-center gap-6 w-5xl'>
-        <Artwork 
-          image='./duck.png'
-          name='duck'
-          artist='Y'
-          description='ducky' 
-          medium='digital'
-          price={1500}
-        />
-        <Artwork 
-          image='./duck.png'
-          name='duck'
-          artist='Y'
-          description='ducky' 
-          medium='digital'
-          price={1500}
-        />
-        <Artwork 
-          image='./duck.png'
-          name='duck'
-          artist='Y'
-          description='ducky' 
-          medium='digital'
-          price={1500}
-        />
-        <Artwork 
-          image='./duck.png'
-          name='duck'
-          artist='Y'
-          description='ducky' 
-          medium='digital'
-          price={1500}
-        />
+        {products.map((product: any) => (
+          <Artwork 
+            image={product.image}
+            name={product.name}
+            artist={product.artist}
+            description={product.desc}
+            medium={product.medium}
+            price={product.price}
+          />
+        ))}
       </div>
     </div>
     </div>
