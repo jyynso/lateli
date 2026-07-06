@@ -1,4 +1,3 @@
-import '../index.css';
 import React, { useMemo, useState } from 'react';
 import { UserIcon, EnvelopeSimpleIcon, LockKeyIcon, EyeIcon, EyeClosedIcon } from '@phosphor-icons/react/dist/ssr';
 import { ZxcvbnFactory } from '@zxcvbn-ts/core'
@@ -60,7 +59,7 @@ export default function Register() {
     <div className='flex items-center justify-center min-h-screen '>
        <form className='flex flex-col text-center w-sm p-5 gap-5 rounded-md bg-(--bg-card)'>
           <h1 className='font-semibold text-lg'>Create Account</h1>
-          <div className='flex items-center p-2 gap-2 rounded-md border-2 focus-within:border-(--accent-coral)'>
+          <div className='flex items-center p-2 gap-2 rounded-md border-2 focus-within:border-(--accent-sandyBrown)'>
             <UserIcon size={22} className='text-gray-400' />
             <input 
             type='text' 
@@ -72,7 +71,7 @@ export default function Register() {
             className='outline-none bg-transparent text-sm w-full'
             />
           </div>
-          <div className='flex items-center p-2 gap-2 rounded-md border-2 focus-within:border-(--accent-coral)'>
+          <div className='flex items-center p-2 gap-2 rounded-md border-2 focus-within:border-(--accent-sandyBrown)'>
             <EnvelopeSimpleIcon size={22} className='text-gray-400' />
             <input 
             type='email' 
@@ -84,7 +83,7 @@ export default function Register() {
             className='outline-none bg-transparent text-sm w-full'
             />
           </div>
-          <div className='flex items-center p-2 gap-2 rounded-md border-2 focus-within:border-(--accent-coral)'>
+          <div className='flex items-center p-2 gap-2 rounded-md border-2 focus-within:border-(--accent-sandyBrown)'>
             <LockKeyIcon size={22} className='text-gray-400' />
             <input 
             type={showPwd ? 'text' : 'password'} 
@@ -111,7 +110,7 @@ export default function Register() {
             <p className='text-xs font-medium text-gray-500 text-right'>{pwdStrength.text}</p>
           </div>
 
-          <div className='flex items-center p-2 gap-2 rounded-md border-2 focus-within:border-(--accent-coral)'>
+          <div className='flex items-center p-2 gap-2 rounded-md border-2 focus-within:border-(--accent-sandyBrown)'>
             <LockKeyIcon size={22} className='text-gray-400' />
             <input 
             type={showPwd ? 'text' : 'password'} 
@@ -133,7 +132,7 @@ export default function Register() {
 
           <div className='h-3'>
             {userData.password && userData.confirmPassword && (
-              <p className='font-semibold text-xs text-right'>
+              <p className='font-semibold text-xs text-right text-gray-400'>
                 {pwdMatch() ? "match" : "not match"}
               </p>
             )}

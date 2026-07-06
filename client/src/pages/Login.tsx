@@ -1,4 +1,3 @@
-import '../index.css';
 import { useState } from 'react';
 import { EnvelopeSimpleIcon, UserIcon, LockKeyIcon, EyeClosedIcon, EyeIcon } from '@phosphor-icons/react/dist/ssr';
 

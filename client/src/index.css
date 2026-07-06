@@ -6,13 +6,26 @@
   --bg-light: #EFE5DC;
   --bg-card: #FFF3F0;
   --text-black: #383D3B;
-  --accent-coral: #FE5F55;
+  --accent-sandyBrown: #F19953;
+  --accent-sunflowerGold: #F3B61F;
   --accent-charcoalBlue: #424C55;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+html.dark {
+  --bg-light: #1f1f1f;
+  --bg-card: #2a2a2a;
+  --text-black: #f5f5f5;
+  --accent-sandyBrown: #ffb37a;
+  --accent-sunflowerGold: #ffd166;
+  --accent-charcoalBlue: #9fb3c8;
 }
 
 html, body {
   -ms-overflow-style: none;
   scrollbar-width: none;
+  transition: --bg-light 0.4s ease, --bg-card 0.4s ease, --text-black 0.4s ease;
 }
 
 html::-webkit-scrollbar, 
