@@ -1,15 +1,17 @@
 import './index.css'
 import './pages/ProductsPage'
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import ProductsPage from './pages/ProductsPage';
 import Navigation from './components/Navigation.tsx'
 import HomePage from './pages/HomePage.tsx'
 import Register from './pages/Register.tsx';
 import Login from './pages/Login.tsx';
+import { AuthProvider } from './context/AuthContext.tsx';
 
   function App() {
     return (
-			<div className='flex flex-col text-(--text-black) font-archivo p-7 bg-(--bg-light) min-h-screen overflow-auto no-scrollbar'>
+			<AuthProvider>
+				<div className='flex flex-col text-(--text-black) font-archivo p-7 bg-(--bg-light) min-h-screen overflow-auto no-scrollbar'>
 				<BrowserRouter>
 					<Navigation />
 					<Routes>
@@ -20,6 +22,7 @@ import Login from './pages/Login.tsx';
 					</Routes>
 				</BrowserRouter>
 			</div>
+			</AuthProvider>
     );
   }
 

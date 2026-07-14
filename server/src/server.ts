@@ -1,9 +1,19 @@
+import "dotenv/config";
 import express from "express";
 import cors from "cors";
+import cookieParser from "cookie-parser";
+import authRouter from "./routes/auth";
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: "http://localhost:5173",
+  credentials: true,
+}));
+
+app.use(express.json());
+app.use(cookieParser());
+app.use("/api/auth", authRouter);
 
 const PORT = 3000;
 
@@ -13,7 +23,7 @@ const products = [
     name: "Duck",
     artist: "Y",
     price: 1200,
-    image: "lateli/client/public/duck.png",
+    image: "/duck.png",
     desc: ":D",
     medium: "idk"
   }

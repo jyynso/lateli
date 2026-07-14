@@ -14,7 +14,7 @@ function Navigation() {
 					<Link to={"/"} className='font-semibold hover:underline'>home</Link>
 					<Link to={"/products"} className='font-semibold hover:underline'>artworks</Link>
 				</ul>
-				<Link to={"/register"}><UserCircleIcon size={30} /></Link>
+				<Link to={"/login"}><UserCircleIcon size={30} /></Link>
 				<ToggleTheme />
     	</div>
     </div>

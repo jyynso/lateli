@@ -17,6 +17,8 @@ export default function Register() {
   const [userData, setUserData] = useState({ username: '', email: '', password: '', confirmPassword: ''});
   const [showPwd, setShowPwd] = useState(false);
   const [pwdScore, setPwdScore] = useState<number | null>(null);
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
   const zxcvbn = useMemo(() => new ZxcvbnFactory(pwdOptions), []); 
 
   const pwdMatch = () => {
@@ -52,12 +54,51 @@ export default function Register() {
       default: return { width: 'w-0', color: 'bg-gray-300', text: '' };
     }
   };
+  
+  const handleSubmit = async (e: React.SubmitEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setError('');
+
+    if (!pwdMatch()) {
+      setError("Password don't match");
+      return;
+    };
+
+    setLoading(true)
+    try {
+      const res = await fetch('http://localhost:3000/api/auth/register', {
+        method: 'POST',
+        credentials: 'include',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: userData.email,
+          password: userData.password,
+          name: userData.username,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        setError(data.error || 'Registration failed');
+        return;
+      }
+
+      console.log('Registered:', data);
+
+    } catch (err) {
+      setError('Could not reach server');
+    } finally {
+      setLoading(false);
+    }
+
+  };
 
   const pwdStrength = getPwdStrength(pwdScore);
 
   return (
     <div className='flex items-center justify-center min-h-screen '>
-       <form className='flex flex-col text-center w-sm p-5 gap-5 rounded-md bg-(--bg-card)'>
+       <form onSubmit={handleSubmit} className='flex flex-col text-center w-sm p-5 gap-5 rounded-md bg-(--bg-card)'>
           <h1 className='font-semibold text-lg'>Create Account</h1>
           <div className='flex items-center p-2 gap-2 rounded-md border-2 focus-within:border-(--accent-sandyBrown)'>
             <UserIcon size={22} className='text-gray-400' />
@@ -138,8 +179,10 @@ export default function Register() {
             )}
           </div>
 
-          <button type='submit' className='text-sm p-2 bg-(--accent-charcoalBlue) text-white rounded'>
-            Submit
+          {error && <p className='text-xs text-red-500'>{error}</p>}
+
+          <button type='submit' disabled={loading} className='text-sm p-2 bg-(--accent-charcoalBlue) text-white rounded'>
+            {loading ? 'Creating account...' : 'Submit'}
           </button>
         </form>
     </div>
