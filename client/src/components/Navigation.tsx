@@ -1,7 +1,6 @@
 import '/src/index.css'
-import { UserCircleIcon } from '@phosphor-icons/react/dist/ssr';
+import { UserCircleIcon, BasketIcon } from '@phosphor-icons/react/dist/ssr';
 import { Link } from 'react-router-dom';
-import ToggleTheme from './ToggleTheme';
 
 function Navigation() {
   return(
@@ -14,8 +13,8 @@ function Navigation() {
 					<Link to={"/"} className='font-semibold hover:underline'>home</Link>
 					<Link to={"/products"} className='font-semibold hover:underline'>artworks</Link>
 				</ul>
-				<Link to={"/login"}><UserCircleIcon size={30} /></Link>
-				<ToggleTheme />
+				<BasketIcon size={30} alt='cart'/>
+				<Link to={"/login"}><UserCircleIcon size={30} alt='login/register' /></Link>
     	</div>
     </div>
     );

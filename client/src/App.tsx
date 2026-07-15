@@ -7,6 +7,7 @@ import HomePage from './pages/HomePage.tsx'
 import Register from './pages/Register.tsx';
 import Login from './pages/Login.tsx';
 import { AuthProvider } from './context/AuthContext.tsx';
+import ToggleTheme from './components/ToggleTheme';
 
   function App() {
     return (
@@ -21,7 +22,8 @@ import { AuthProvider } from './context/AuthContext.tsx';
 						<Route path='/login' element={<Login />}/>
 					</Routes>
 				</BrowserRouter>
-			</div>
+				<ToggleTheme />
+				</div>
 			</AuthProvider>
     );
   }
