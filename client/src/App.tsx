@@ -12,7 +12,7 @@ import ToggleTheme from './components/ToggleTheme';
   function App() {
     return (
 			<AuthProvider>
-				<div className='flex flex-col text-(--text-black) font-archivo p-7 bg-(--bg-light) min-h-screen overflow-auto no-scrollbar'>
+				<div className='flex flex-col text-(--text-black) font-archivo bg-(--bg-light) min-h-screen overflow-auto no-scrollbar'>
 				<BrowserRouter>
 					<Navigation />
 					<Routes>
