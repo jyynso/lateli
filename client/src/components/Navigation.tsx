@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 function Navigation() {
   return(
-  	<div className='flex items-center justify-between gap-10 p-3 pl-10 pr-10 bg-(--bg-card)'>
+  	<div className='flex items-center justify-between gap-10 p-5 pl-10 pr-10 bg-(--bg-card)'>
 			<div>
         <Link to={"/"} className='font-bold text-2xl'>lateli</Link>
 			</div>
