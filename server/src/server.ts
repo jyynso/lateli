@@ -24,8 +24,17 @@ const products = [
     artist: "Y",
     price: 1200,
     image: "/duck.png",
-    desc: ":D",
-    medium: "idk"
+    desc: "Duck study",
+    medium: "Digital, Clip Studio"
+  },
+  {
+    id: 2,
+    name: "You at the cafe",
+    artist: "Y",
+    price: 2100,
+    image: "/cafe.png",
+    desc: "Painting study",
+    medium: "Digital, Clip Studio Paint"
   }
 ];
 
