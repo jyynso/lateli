@@ -31,6 +31,10 @@ function ProductsPage() {
 
   }, []);
 
+  const handleAddToCart = () => {
+
+  };
+
   const { user } = useAuth();
   console.log(user);
 
@@ -51,6 +55,7 @@ function ProductsPage() {
               description={product.desc}
               medium={product.medium}
               price={product.price}
+              onAddToCart={() => handleAddToCart}
             />
           ))
         )}
