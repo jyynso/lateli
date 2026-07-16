@@ -35,7 +35,7 @@ function ProductsPage() {
   console.log(user);
 
   return (
-    <div className='p-7'>
+    <div className='p-7 pt-15'>
       <SidebarFilter  />
       <div className='p-7 bg-(--bg-light) min-h-screen overflow-auto no-scrollbar'>
         <h1 className='font-bold text-4xl text-center mt-5'>Artworks</h1>

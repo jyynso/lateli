@@ -3,6 +3,7 @@
 
 @theme {
   --font-archivo: 'Archivo', sans-serif;
+  --bg-white: #fcebe6;
   --bg-light: #EFE5DC;
   --bg-card: #FFF3F0;
   --text-black: #383D3B;
