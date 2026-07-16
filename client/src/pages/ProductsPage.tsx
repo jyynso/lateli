@@ -1,6 +1,5 @@
 import Artwork from '../components/Artwork';
 import SidebarFilter from '../components/SidebarFilter';
-import { MagnifyingGlassIcon } from '@phosphor-icons/react/dist/ssr';
 import { useEffect, useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 

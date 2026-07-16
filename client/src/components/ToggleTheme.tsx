@@ -14,8 +14,12 @@ function ToggleTheme() {
   };
 
   return (
-    <button className='cursor-pointer fixed mt-150 ml-3' aria-label='toggle theme' onClick={toggleTheme}>
-      <LampIcon size={29} className={darkMode ? 'text-yellow-300' : 'hover:text-(--accent-sandyBrown)'}/>
+    <button
+      className='fixed left-5 bottom-4 z-50 cursor-pointer rounded-full bg-white/80 p-2 shadow-md backdrop-blur-sm dark:bg-slate-900/80'
+      aria-label='toggle theme'
+      onClick={toggleTheme}
+    >
+      <LampIcon size={29} className={darkMode ? 'text-yellow-300' : 'hover:text-(--accent-sandyBrown)'} />
     </button>
   );
 }
