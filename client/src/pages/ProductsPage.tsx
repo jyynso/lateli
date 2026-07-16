@@ -32,7 +32,7 @@ function ProductsPage() {
   }, []);
 
   const handleAddToCart = () => {
-
+    
   };
 
   const { user } = useAuth();
