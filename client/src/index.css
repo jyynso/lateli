@@ -3,7 +3,7 @@
 
 @theme {
   --font-archivo: 'Archivo', sans-serif;
-  --bg-white: #fcebe6;
+  --bg-white: #faf9f7;
   --bg-light: #EFE5DC;
   --bg-card: #FFF3F0;
   --text-black: #383D3B;
@@ -15,6 +15,7 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 html.dark {
+  --bg-white: #141414;
   --bg-light: #1f1f1f;
   --bg-card: #2a2a2a;
   --text-black: #f5f5f5;

@@ -1,5 +1,5 @@
 import '/src/index.css'
-import { UserCircleIcon, BasketIcon, MagnifyingGlassIcon } from '@phosphor-icons/react/dist/ssr';
+import { UserCircleIcon, ShoppingCartSimpleIcon, MagnifyingGlassIcon } from '@phosphor-icons/react/dist/ssr';
 import { Link } from 'react-router-dom';
 
 function Navigation() {
@@ -27,7 +27,7 @@ function Navigation() {
 					</form>
 				</div>
 				
-				<BasketIcon size={30} alt='cart'/>
+				<ShoppingCartSimpleIcon size={30} alt='cart'/>
 				<Link to={"/login"}><UserCircleIcon size={30} alt='login/register' /></Link>
     	</div>
     </div>
