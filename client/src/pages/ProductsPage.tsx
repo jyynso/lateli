@@ -45,23 +45,23 @@ function ProductsPage() {
       <SidebarCart />
       <div className='p-7 bg-(--bg-light) min-h-screen overflow-auto no-scrollbar'>
         <h1 className='font-bold text-4xl text-center mt-5'>Artworks</h1>
-      <div className='mt-10 mx-auto flex flex-row flex-wrap justify-center gap-6 w-5xl'>
-        {loading && <p className='text-center mt-10'>loading... uwu</p>}
-        {error && <p className='text-center mt-10'>{error}</p>}
-        {!loading && !error && (
-          products.map((product: any) => (
-            <Artwork 
-              image={product.image}
-              name={product.name}
-              artist={product.artist}
-              description={product.desc}
-              medium={product.medium}
-              price={product.price}
-              onAddToCart={() => handleAddToCart}
-            />
-          ))
-        )}
-      </div>
+        <div className='mt-10 mx-auto flex flex-row flex-wrap justify-center gap-6 w-5xl'>
+          {loading && <p className='text-center mt-10'>loading... uwu</p>}
+          {error && <p className='text-center mt-10'>{error}</p>}
+          {!loading && !error && (
+            products.map((product: any) => (
+              <Artwork 
+                image={product.image}
+                name={product.name}
+                artist={product.artist}
+                description={product.desc}
+                medium={product.medium}
+                price={product.price}
+                onAddToCart={() => handleAddToCart}
+              />
+            ))
+          )}
+        </div>
       </div>
     </div>
   );

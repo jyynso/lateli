@@ -8,6 +8,7 @@ import Register from './pages/Register.tsx';
 import Login from './pages/Login.tsx';
 import { AuthProvider } from './context/AuthContext.tsx';
 import ToggleTheme from './components/ToggleTheme';
+import Cart from './pages/Cart.tsx';
 
   function App() {
     return (
@@ -20,6 +21,7 @@ import ToggleTheme from './components/ToggleTheme';
 						<Route path='/products' element={<ProductsPage />} />
 						<Route path='/register' element={<Register />}/>
 						<Route path='/login' element={<Login />}/>
+						<Route path='/cart' element={<Cart />}/>
 					</Routes>
 				</BrowserRouter>
 				<ToggleTheme />

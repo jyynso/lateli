@@ -8,7 +8,8 @@ function Login() {
   const [showPwd, setShowPwd] = useState(false);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const { setUser } = useAuth();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -44,10 +45,8 @@ function Login() {
       }
       
       console.log('Logged in uwu', data);
-      navigate("/products");
-
-      const { setUser } = useAuth();
       setUser(data);
+      navigate("/products");
       
     } catch (err) {
       setError("Could not reach server");
@@ -93,8 +92,10 @@ function Login() {
             </button>
           </div>
 
+          {error ? <p className='text-sm text-red-500'>{error}</p> : null}
+
           <button type='submit' className='text-sm p-2 bg-(--accent-charcoalBlue) text-white rounded'>
-            Login
+            {loading ? 'Logging in...' : 'Login'}
           </button>
 
           <Link to={"/register"} className='text-sm text-(--text-black)'>Make an account</Link>
