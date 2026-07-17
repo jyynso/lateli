@@ -27,8 +27,8 @@ function Navigation() {
 					</form>
 				</div>
 				
-				<ShoppingCartSimpleIcon size={30} alt='cart'/>
-				<Link to={"/login"}><UserCircleIcon size={30} alt='login/register' /></Link>
+				<Link to={"/cart"}> <ShoppingCartSimpleIcon size={30} alt='cart'/> </Link>
+				<Link to={"/login"}> <UserCircleIcon size={30} alt='login/register' /> </Link>
     	</div>
     </div>
     );
