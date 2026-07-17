@@ -1,5 +1,6 @@
 import Artwork from '../components/Artwork';
 import SidebarFilter from '../components/SidebarFilter';
+import SidebarCart from '../components/SidebarCart';
 import { useEffect, useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 
@@ -41,6 +42,7 @@ function ProductsPage() {
   return (
     <div className='p-7 pt-15'>
       <SidebarFilter  />
+      <SidebarCart />
       <div className='p-7 bg-(--bg-light) min-h-screen overflow-auto no-scrollbar'>
         <h1 className='font-bold text-4xl text-center mt-5'>Artworks</h1>
       <div className='mt-10 mx-auto flex flex-row flex-wrap justify-center gap-6 w-5xl'>
