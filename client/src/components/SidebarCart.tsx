@@ -2,14 +2,15 @@ import { ShoppingBagIcon, ShoppingBagOpenIcon } from "@phosphor-icons/react/dist
 import { useState } from "react";
 
 function SidebarCart() {
- const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-   <div>
+    <div>
       <button
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
         aria-controls="sidebar-cart-panel"
-        className="fixed z-50 top-20 right-0 p-1 rounded-l-md cursor-pointer bg-(--bg-white)">
+        className={`fixed z-50 top-20 shadow-lg ${isOpen ? "right-60" : "right-0"} p-1 rounded-l-md cursor-pointer bg-(--bg-white) transition-all duration-100`}>
         {isOpen ? (
           <ShoppingBagOpenIcon size={30} />
         ) : (
@@ -24,7 +25,7 @@ function SidebarCart() {
             role="dialog"
             aria-modal="true"
             onClick={(e) => e.stopPropagation()}
-            className="fixed top-20 right-0 z-50 w-60 max-w-full rounded-md bg-(--bg-white) p-4 shadow-lg">
+            className="fixed top-20 right-0 z-50 w-60 max-w-full rounded-bl-md bg-(--bg-white) p-4 shadow-lg">
             <div className="">
               <h1 className="text-lg font-semibold">Cart</h1>
               <p>mcChicken</p>
