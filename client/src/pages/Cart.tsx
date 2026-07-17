@@ -1,17 +1,11 @@
-import Navigation from "../components/Navigation";
-import ToggleTheme from "../components/ToggleTheme";
-
 function Cart() {
   return (
-    <div>
-      <Navigation />
-      <ToggleTheme />
-      
-      <div className=" bg-(--bg-light) min-h-screen no-scrollbar">
-        <h1 className="text-center mt-10">wowzers</h1>
+    <div className="min-h-screen bg-(--bg-light) pt-24">
+      <div className="mx-auto max-w-6xl px-6 py-10">
+        <h1 className="text-center text-2xl font-semibold">wowzers</h1>
       </div>
     </div>
-  )
+  );
 }
 
 export default Cart;
