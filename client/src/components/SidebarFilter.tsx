@@ -10,7 +10,7 @@ function SidebarCart() {
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
         aria-controls="sidebar-cart-panel"
-        className={`fixed z-50 top-20 shadow-lg ${isOpen ? "right-50" : "right-0"} p-1 rounded-l-md cursor-pointer bg-(--bg-white) transition-all duration-50`}>
+        className={`fixed z-50 top-20 shadow-md ${isOpen ? "left-50" : "left-0"} p-1 rounded-r-md cursor-pointer bg-(--bg-white) transition-all duration-50`}>
         {isOpen ? (
           <ShoppingBagOpenIcon size={30} />
         ) : (
@@ -25,9 +25,9 @@ function SidebarCart() {
             role="dialog"
             aria-modal="true"
             onClick={(e) => e.stopPropagation()}
-            className="fixed top-20 right-0 z-50 w-50 max-w-full rounded-bl-md bg-(--bg-white) p-4 shadow-lg">
+            className="fixed top-20 left-0 z-50 w-50 max-w-full rounded-br-md bg-(--bg-white) p-4 shadow-lg">
             <div className="flex flex-col gap-2">
-              <h1 className="text-lg font-semibold">Cart</h1>
+              <h1 className="text-lg font-semibold">Filters</h1>
               <p>mcChicken</p>
               <h1 className="text-lg font-semibold">Total</h1>
 
