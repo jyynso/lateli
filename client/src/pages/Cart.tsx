@@ -1,8 +1,7 @@
 function Cart() {
   return (
     <div className="min-h-screen px-4 pt-24">
-      <h1 className="p-8 text-center text-2xl font-semibold">Your Cart</h1>
-
+      <h1 className="p-8 text-2xl text-center font-semibold">Your Cart</h1>
       <div className="mx-auto flex w-full max-w-5xl flex-col items-center justify-center gap-6 md:flex-row md:items-start">
         <div className="flex w-full max-w-md flex-col items-center p-5">
           <div className="flex flex-row gap-5">

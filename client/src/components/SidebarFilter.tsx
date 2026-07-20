@@ -1,93 +1,42 @@
-import { CaretDownIcon } from "@phosphor-icons/react/dist/ssr";
+import { ShoppingBagIcon, ShoppingBagOpenIcon } from "@phosphor-icons/react/dist/ssr";
 import { useState } from "react";
 
-function SidebarFilter() {
-  const [isMenuOpen, setIsMenuOpen] = useState({
-    medium: false,
-    category: false,
-    price: false
-  });
-
-  type Menu = keyof typeof isMenuOpen;
-
-  const toggleDropdown = (name: Menu) => {
-    setIsMenuOpen((prev) => ({
-      ...prev,
-      [name]: !prev[name],
-    }));
-  };
+function SidebarCart() {
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="fixed flex flex-col mt-10 gap-3">
-      <h1 className="font-semibold text-lg">Filters</h1>
-      <span className="flex flex-row gap-10">
-        <p className="mb-2">Medium</p>
-        <CaretDownIcon 
-          weight="bold" 
-          onClick={() => toggleDropdown("medium")}
-          className={`transition-transform ${
-              isMenuOpen.medium ? "rotate-180" : ""
-            }`}
-          />
-      </span>
-      
-      {isMenuOpen.medium && (
-        <div className="ml-4 flex flex-col gap-1">
-          <label className="flex flex-row gap-2">
-            <input type="checkbox" className=""/>
-            Oil
-          </label>
-          <label className="flex flex-row gap-2">
-            <input 
-              type="checkbox"
-            />
-            Watercolor
-          </label>
-          <label className="flex flex-row gap-2">
-            <input 
-              type="checkbox"
-            />
-            Digital
-          </label>
-        </div>
-      )}
+    <div>
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        aria-expanded={isOpen}
+        aria-controls="sidebar-cart-panel"
+        className={`fixed z-50 top-20 shadow-lg ${isOpen ? "right-50" : "right-0"} p-1 rounded-l-md cursor-pointer bg-(--bg-white) transition-all duration-50`}>
+        {isOpen ? (
+          <ShoppingBagOpenIcon size={30} />
+        ) : (
+          <ShoppingBagIcon size={30} />
+        )}
+      </button>
 
-      <span className="flex flex-row gap-10">
-        <p className="mb-2">Category</p>
-        <CaretDownIcon 
-          weight="bold" 
-          onClick={() => toggleDropdown("category")}
-          className={`transition-transform ${
-              isMenuOpen.category ? "rotate-180" : ""
-            }`}
-          />
-      </span>
+      {isOpen && (
+        <div className="fixed inset-0 z-50" onClick={() => setIsOpen(false)}>
+          <div
+            id="sidebar-cart-panel"
+            role="dialog"
+            aria-modal="true"
+            onClick={(e) => e.stopPropagation()}
+            className="fixed top-20 right-0 z-50 w-50 max-w-full rounded-bl-md bg-(--bg-white) p-4 shadow-lg">
+            <div className="flex flex-col gap-2">
+              <h1 className="text-lg font-semibold">Cart</h1>
+              <p>mcChicken</p>
+              <h1 className="text-lg font-semibold">Total</h1>
 
-      {isMenuOpen.category && (
-        <div className="ml-4 flex flex-col gap-1">
-          <label className="flex flex-row gap-2">
-            <input 
-              type="checkbox"
-            />
-            Landscape
-          </label>
-          <label className="flex flex-row gap-2">
-            <input 
-              type="checkbox"
-            />
-            Portrait
-          </label>
-          <label className="flex flex-row gap-2">
-            <input 
-              type="checkbox"
-            />
-            Abstract
-          </label>
+            </div>
+          </div>
         </div>
       )}
     </div>
-    
   );
 }
 
-export default SidebarFilter;
+export default SidebarCart;

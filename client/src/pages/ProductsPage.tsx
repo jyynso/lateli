@@ -1,6 +1,6 @@
 import Artwork from '../components/Artwork';
-import SidebarFilter from '../components/SidebarFilter';
-import SidebarCart from '../components/SidebarCart';
+import SidebarFilter from '../components/SidebarFilteridk';
+import SidebarCart from '../components/SidebarFilter';
 import { useEffect, useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 
