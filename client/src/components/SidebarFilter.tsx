@@ -10,7 +10,7 @@ function SidebarCart() {
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
         aria-controls="sidebar-cart-panel"
-        className={`fixed z-50 top-20 shadow-md ${isOpen ? "left-50" : "left-0"} p-1 rounded-r-md cursor-pointer bg-(--bg-white) transition-all duration-50`}>
+        className={`fixed z-50 top-30 shadow-md ${isOpen ? "left-50" : "left-0"} p-1 rounded-r-md cursor-pointer bg-(--bg-white) transition-all duration-50`}>
         {isOpen ? (
           <SlidersIcon size={30} />
         ) : (
@@ -25,7 +25,7 @@ function SidebarCart() {
             role="dialog"
             aria-modal="true"
             onClick={(e) => e.stopPropagation()}
-            className="fixed top-20 left-0 z-50 w-50 p-4 max-w-full rounded-br-md shadow-md bg-(--bg-white)">
+            className="fixed top-20 left-0 z-50 w-50 h-110 p-4 max-w-full rounded-md shadow-md bg-(--bg-white)">
             <div className="flex flex-col gap-2">
               <h1 className="text-lg font-semibold">Filters</h1>
               <p>bababooey</p>

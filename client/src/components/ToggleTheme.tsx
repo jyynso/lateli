@@ -15,7 +15,7 @@ function ToggleTheme() {
 
   return (
     <button
-      className='fixed left-5 bottom-4 z-50 cursor-pointer rounded-full bg-(--bg-white) p-2 shadow-md backdrop-blur-sm '
+      className='fixed right-5 bottom-4 z-50 cursor-pointer rounded-full bg-(--bg-white) p-2 shadow-md backdrop-blur-sm '
       aria-label='toggle theme'
       onClick={toggleTheme}
     >
