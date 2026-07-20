@@ -1,5 +1,4 @@
 import './index.css'
-import './pages/ProductsPage'
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import ProductsPage from './pages/ProductsPage';
 import Navigation from './components/Navigation.tsx'

@@ -22,7 +22,8 @@ function Cart() {
           <h1 className="text-xl font-semibold text-left">Order Summary</h1>
           <p>Subtotal</p>
           <p className="text-lg font-semibold">Total</p>
-          <button className="rounded-sm p-2.5 mt-auto bg-(--accent-charcoalBlue) text-(--bg-white)">
+          <button
+            type="submit" className="rounded-sm p-2.5 mt-auto cursor-pointer bg-(--accent-charcoalBlue) text-(--bg-white)">
             Checkout
           </button>
         </div>

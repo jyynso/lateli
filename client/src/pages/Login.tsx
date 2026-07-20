@@ -94,7 +94,7 @@ function Login() {
 
           {error ? <p className='text-sm text-red-500'>{error}</p> : null}
 
-          <button type='submit' className='text-sm p-2 bg-(--accent-charcoalBlue) text-white rounded'>
+          <button type='submit' className='text-sm p-2 cursor-pointer bg-(--accent-charcoalBlue) text-white rounded'>
             {loading ? 'Logging in...' : 'Login'}
           </button>
 
