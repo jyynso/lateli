@@ -2,10 +2,12 @@ import { S3Client } from '@aws-sdk/client-s3';
 
 const client = new S3Client({
   forcePathStyle: true,
-  region: 'project_region',
-  endpoint: 'https://project_ref.storage.supabase.co/storage/v1/s3',
+  region: process.env.SUPABASE_S3_REGION,
+  endpoint: process.env.SUPABASE_S3_ENDPOINT,
   credentials: {
-    accessKeyId: 'your_access_key_id',
-    secretAccessKey: 'your_secret_access_key',
+    accessKeyId: process.env.SUPABASE_S3_ACCESS_KEY!,
+    secretAccessKey: process.env.SUPABASE_S3_SECRET_KEY!,
   }
 })
+
+export const BUCKET_NAME = process.env.SUPABASE_BUCKET!;
