@@ -26,7 +26,8 @@ function SidebarCart() {
             className="fixed top-20 left-0 z-50 w-50 h-110 p-4 max-w-full rounded-md shadow-md bg-(--bg-white)">
             <div className="flex flex-col gap-2">
               <h1 className="text-lg font-semibold">Filters</h1>
-              <p>bababooey</p>
+              <p>Medium</p>
+              <p>Price</p>
             </div>
           </div>
       )}
