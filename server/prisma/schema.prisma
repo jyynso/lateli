@@ -9,19 +9,25 @@ datasource db {
 }
 
 model User {
-  id            Int                       @id @default(autoincrement())
-  email         String                    @unique
-  passwordHash  String  
-  name          String?
-  createdAt     DateTime @default(now())
+  id           Int       @id @default(autoincrement())
+  email        String    @unique
+  passwordHash String
+  name         String?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @default(now()) @updatedAt
+  artworks     Artwork[]
 }
 
 model Artwork {
-  id            Int                       @id @default(autoincrement())
-  name          String                    
-  artist        String  
-  description   String?
-  medium        String?
-  price         Float
-  imageUrl      String?
+  id          Int      @id @default(autoincrement())
+  name        String
+  artist      String
+  description String?
+  medium      String?
+  price       Decimal  @db.Decimal(10, 2)
+  imageUrl    String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @default(now()) @updatedAt
+  userId      Int?
+  user        User?    @relation(fields: [userId], references: [id])
 }
