@@ -11,9 +11,9 @@ function UploadArtwork() {
   return (
     <div>
       <div className="flex flex-col justify-center items-center min-h-screen">
-        <form onSubmit={handleSubmit} className="flex flex-row gap-4 rounded-md shadow-md  bg-(--bg-card)">
+        <form onSubmit={handleSubmit} className="flex flex-row gap-4 rounded-md shadow-md bg-(--bg-card)">
           
-          <img src="/suchanzoom.jpg" className="h-100 w-90 rounded-l-md object-cover"/>
+          <img src="/duck.png" className="h-100 w-90 rounded-l-md object-cover"/>
           
           <div className="flex flex-col items-center w-70 gap-4 p-5">
             <h1 className="font-semibold">Upload an Artwork</h1>
