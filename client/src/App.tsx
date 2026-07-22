@@ -8,24 +8,24 @@ import Login from './pages/Login.tsx';
 import { AuthProvider } from './context/AuthContext.tsx';
 import ToggleTheme from './components/ToggleTheme';
 import Cart from './pages/Cart.tsx';
-import UploadArtwork from './pages/UploadArtwork.tsx'
+import UploadArtwork from './pages/UploadArtworkPage.tsx'
 
   function App() {
     return (
 			<AuthProvider>
 				<div className='flex flex-col text-(--text-black) font-archivo bg-(--bg-light) min-h-screen overflow-auto no-scrollbar'>
-				<BrowserRouter>
-					<Navigation />
-					<Routes>
-						<Route path='/' element={<HomePage />} />
-						<Route path='/products' element={<ProductsPage />} />
-						<Route path='/register' element={<Register />}/>
-						<Route path='/login' element={<Login />}/>
-						<Route path='/cart' element={<Cart />}/>
-						<Route path='/uploadArtwork' element={<UploadArtwork />}/>
-					</Routes>
-				</BrowserRouter>
-				<ToggleTheme />
+					<BrowserRouter>
+						<Navigation />
+						<Routes>
+							<Route path='/' element={<HomePage />} />
+							<Route path='/products' element={<ProductsPage />} />
+							<Route path='/register' element={<Register />}/>
+							<Route path='/login' element={<Login />}/>
+							<Route path='/cart' element={<Cart />}/>
+							<Route path='/uploadArtwork' element={<UploadArtwork />}/>
+						</Routes>
+					</BrowserRouter>
+					<ToggleTheme />
 				</div>
 			</AuthProvider>
     );
