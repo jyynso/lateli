@@ -1,8 +1,12 @@
 import '/src/index.css'
 import { UserCircleIcon, ShoppingCartSimpleIcon, MagnifyingGlassIcon } from '@phosphor-icons/react/dist/ssr';
 import { Link } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 
 function Navigation() {
+	const { user } = useAuth();
+	const isLoggedIn = Boolean(user);
+
   return(
   	<div className='fixed top-0 left-0 z-50 flex w-full items-center justify-between gap-10 p-3 pl-10 pr-10 bg-(--bg-card)'>
 			<div>
@@ -27,8 +31,12 @@ function Navigation() {
 					</form>
 				</div>
 				
-				<Link to={"/cart"}> <ShoppingCartSimpleIcon size={30} alt='cart'/> </Link>
-				<Link to={"/login"}> <UserCircleIcon size={30} alt='login/register' /> </Link>
+				<Link to={"/cart"}> <ShoppingCartSimpleIcon size={30}/> </Link>
+				<Link to={"/login"}> 
+					<UserCircleIcon
+  					size={30}
+  					color={isLoggedIn ? 'var(--accent-sandyBrown)' : 'var(--text-black)'}/>
+				</Link>
     	</div>
     </div>
     );
