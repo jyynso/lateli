@@ -16,18 +16,38 @@ model User {
   createdAt    DateTime  @default(now())
   updatedAt    DateTime  @default(now()) @updatedAt
   artworks     Artwork[]
+  orders       Order[]
 }
 
 model Artwork {
-  id          Int      @id @default(autoincrement())
+  id          Int        @id @default(autoincrement())
   name        String
   artist      String
   description String?
   medium      String?
-  price       Decimal  @db.Decimal(10, 2)
+  price       Decimal    @db.Decimal(10, 2)
   imageUrl    String?
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @default(now()) @updatedAt
-  userId      Int?
-  user        User?    @relation(fields: [userId], references: [id])
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @default(now()) @updatedAt
+  userId      Int
+  user        User?      @relation(fields: [userId], references: [id])
+  OrderItem   OrderItem?
+}
+
+model Order {
+  id        Int         @id @default(autoincrement())
+  buyerId   Int
+  buyer     User        @relation(fields: [buyerId], references: [id])
+  status    String      @default("pending")
+  createdAt DateTime    @default(now())
+  items     OrderItem[]
+}
+
+model OrderItem {
+  id        Int     @id @default(autoincrement())
+  orderId   Int
+  order     Order   @relation(fields: [orderId], references: [id])
+  artworkId Int     @unique
+  artwork   Artwork @relation(fields: [artworkId], references: [id])
+  price     Decimal @db.Decimal(10, 2)
 }
