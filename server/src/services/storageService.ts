@@ -24,7 +24,13 @@ export async function uploadArtwork(
   return publicUrl;
 }
 
-export async function deleteImage(key: string): Promise<void> {
+export function extractKeyFromUrl(url: string): string {
+  return url.split(`/${BUCKET_NAME}/`).pop()!;
+}
+
+export async function deleteImage(url: string): Promise<void> {
+  const key = extractKeyFromUrl(url);
+
   await client.send(
     new DeleteObjectCommand({
       Bucket: BUCKET_NAME,
