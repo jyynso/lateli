@@ -1,8 +1,9 @@
 import "dotenv/config";
-import express from "express";
+import express, { application } from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import authRouter from "./routes/auth";
+import artworkRouter from "./routes/artwork";
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.use(cors({
 app.use(express.json());
 app.use(cookieParser());
 app.use("/api/auth", authRouter);
+app.use("/api", artworkRouter);
 
 const PORT = 3000;
 
