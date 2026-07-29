@@ -2,10 +2,11 @@ import { Router } from 'express';
 import { upload } from '../middleware/upload';
 import { uploadArtwork } from '../services/storageService';
 import { prisma } from '../lib/prisma';
+import { requireAuth } from '../middleware/requireAuth';
 
 const router = Router();
 
-router.post('/artworks', upload.single('image'), async (req, res) => {
+router.post('/artworks', requireAuth, upload.single('image'), async (req, res) => {
   try {
     if (!req.file) {
       return res.status(400).json({ error: 'No image file provided'});
@@ -25,6 +26,7 @@ router.post('/artworks', upload.single('image'), async (req, res) => {
         medium: req.body.medium,
         price: parseFloat(req.body.price),
         imageUrl,
+        userId: (req as any).userId,
       },
     });
 
