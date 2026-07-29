@@ -21,7 +21,7 @@ function UploadArtwork() {
     e.preventDefault();
 
     if (!imageFile) {
-      alert("please select an image uwu");
+      alert("Please select an image");
       return;
     }
 
@@ -39,14 +39,14 @@ function UploadArtwork() {
         body: formData,
       })
 
-      if (!res.ok) throw new Error("Upload failed uwu");
+      if (!res.ok) throw new Error("Upload failed");
 
       const data = await res.json();
       console.log("Uploaded", data);
       alert("Artwork Uploaded")
     } catch (err) {
       console.error(err);
-      alert("something broke uwu")
+      alert("Something broke")
     }
   };
 
