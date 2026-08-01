@@ -1,34 +1,34 @@
-import Artwork from '../components/Artwork';
+import ArtworkCard from '../components/Artwork';
 import SidebarCart from '../components/SidebarFilter';
 import { useEffect, useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 
+interface ArtworkData {
+  imageUrl: string;
+  name: string;
+  artist: string;
+  description: string;
+  medium: string;
+  price: number;
+}
+
 function ProductsPage() {
-  const [products, setProducts] = useState([]);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
+  const [artworks, setArtworks] = useState<ArtworkData[]>([]);
 
   useEffect(() => {
-    async function getProducts() {
-      try {
-        const response = await fetch("http://localhost:3000/api/products");
-        
-        if(!response.ok) {
-          throw new Error("Failed to fetch products")
-        }
-
-        const data = await response.json();
-        setProducts(data);
-        
-      } catch (error) {
-        setError(error instanceof Error ? error.message : "Something went wrong uwu");
-      } finally {
+    fetch('http://localhost:3000/api/artworks')
+      .then(res => res.json())
+      .then(data => {
+        setArtworks(data);
         setLoading(false);
-      }
-    }
-
-    getProducts();
-
+      })
+      .catch(err => {
+        console.error(err);
+        setError("Failed to load artworks");
+        setLoading(false);
+      })
   }, []);
 
   const handleAddToCart = () => {
@@ -47,14 +47,14 @@ function ProductsPage() {
           {loading && <p className='text-center mt-10'>loading... uwu</p>}
           {error && <p className='text-center mt-10'>{error}</p>}
           {!loading && !error && (
-            products.map((product: any) => (
-              <Artwork 
-                image={product.image}
-                name={product.name}
-                artist={product.artist}
-                description={product.desc}
-                medium={product.medium}
-                price={product.price}
+            artworks.map((artwork: any) => (
+              <ArtworkCard 
+                image={artwork.image}
+                name={artwork.name}
+                artist={artwork.artist}
+                description={artwork.desc}
+                medium={artwork.medium}
+                price={artwork.price}
                 onAddToCart={() => handleAddToCart}
               />
             ))

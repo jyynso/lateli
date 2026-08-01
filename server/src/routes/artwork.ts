@@ -6,6 +6,12 @@ import { requireAuth } from '../middleware/requireAuth';
 
 const router = Router();
 
+router.get('/artworks', async (req, res) => {
+  const artworks = await prisma.artwork.findMany({
+  });
+  res.json(artworks);
+});
+
 router.post('/artworks', requireAuth, upload.single('image'), async (req, res) => {
   try {
     if (!req.file) {
