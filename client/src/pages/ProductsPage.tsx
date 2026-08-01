@@ -52,7 +52,7 @@ function ProductsPage() {
                 image={artwork.imageUrl}
                 name={artwork.name}
                 artist={artwork.artist}
-                description={artwork.desc}
+                description={artwork.description}
                 medium={artwork.medium}
                 price={artwork.price}
                 onAddToCart={() => handleAddToCart}
