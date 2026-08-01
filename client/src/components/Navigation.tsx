@@ -7,7 +7,7 @@ function Navigation() {
 	const { user } = useAuth();
 	const isLoggedIn = Boolean(user);
 
-  return(
+  return (
   	<div className='fixed top-0 left-0 z-50 flex w-full items-center justify-between gap-10 p-3 pl-10 pr-10 bg-(--bg-card)'>
 			<div>
         <Link to={"/"} className='font-bold text-2xl'>lateli</Link>

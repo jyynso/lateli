@@ -13,7 +13,7 @@ type ArtworkProps = {
 
 function Artwork({ image, name, artist, description, medium, price, onAddToCart }: ArtworkProps) {
   return (
-    <div className = 'flex flex-col w-72 rounded-md bg-(--bg-card) drop-shadow'>
+    <div className = 'flex flex-col lg:w-72 sm:w-90 rounded-md bg-(--bg-card) drop-shadow'>
       <img src={image} alt={name} className='rounded-t-md h-75 object-cover'/>
       <div className='flex flex-col gap-1 p-4'>
         <h1 className='text-xl font-semibold'>{name}</h1>
