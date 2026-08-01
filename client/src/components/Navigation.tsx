@@ -8,7 +8,7 @@ function Navigation() {
 	const isLoggedIn = Boolean(user);
 
   return (
-  	<div className='fixed top-0 left-0 z-50 flex w-full items-center justify-between gap-10 p-3 pl-10 pr-10 bg-(--bg-card)'>
+  	<div className='fixed top-0 left-0 z-50 flex flex-wrap w-full items-center justify-between gap-1 p-3 bg-(--bg-card)'>
 			<div>
         <Link to={"/"} className='font-bold text-2xl'>lateli</Link>
 			</div>
@@ -19,14 +19,14 @@ function Navigation() {
 					<Link to={"/products"} className='font-semibold hover:underline'>Artworks</Link>
 				</ul>
 
-				<div className='flex flex-row gap-2 p-2 pl-2 pr-7 rounded-sm '>
+				<div className='flex flex-row gap-2 p-2 pl-2 pr-7 sm:pr-0  rounded-sm '>
 					<form className='flex items-center w-full'>
 						<MagnifyingGlassIcon size={25} />
 						<input 
 							type='text' 
 							placeholder='Search...' 
 							id='searchInput'
-							className='flex-1 pl-3 bg-transparent outline-none placeholder-gray-500'
+							className='flex-1 pl-3 bg-transparent outline-none w-full sm:w-30 placeholder-gray-500'
 							/>
 					</form>
 				</div>
