@@ -19,31 +19,6 @@ app.use("/api", artworkRouter);
 
 const PORT = 3000;
 
-const products = [
-  {
-    id: 1,
-    name: "Duck",
-    artist: "Y",
-    price: 1200,
-    image: "/duck.png",
-    desc: "Duck study",
-    medium: "Digital, Clip Studio"
-  },
-  {
-    id: 2,
-    name: "You at the cafe",
-    artist: "Y",
-    price: 2100,
-    image: "/cafe.png",
-    desc: "Painting study",
-    medium: "Digital, Clip Studio Paint"
-  }
-];
-
-app.get("/api/products", (req, res) => {
-  res.json(products);
-});
-
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
