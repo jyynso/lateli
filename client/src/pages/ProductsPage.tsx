@@ -49,7 +49,7 @@ function ProductsPage() {
           {!loading && !error && (
             artworks.map((artwork: any) => (
               <ArtworkCard 
-                image={artwork.image}
+                image={artwork.imageUrl}
                 name={artwork.name}
                 artist={artwork.artist}
                 description={artwork.desc}
