@@ -9,7 +9,7 @@ function Navigation() {
 	const isLoggedIn = Boolean(user);
 
   return (
-  	<div className='sm:flex-row fixed top-0 left-0 z-50 flex flex-wrap w-full items-center justify-between gap-1 p-3 bg-(--bg-card)'>
+  	<div className='sm:flex-row fixed top-0 left-0 z-40 flex flex-wrap w-full items-center justify-between gap-1 p-3 bg-(--bg-card)'>
 			<Link to={"/"} className='font-bold text-2xl px-3'>lateli</Link>
 
 			<form className='order-last w-full sm:order-0 sm:w-lg flex items-center px-3 py-2 border-2 rounded-full'>

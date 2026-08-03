@@ -1,5 +1,5 @@
 import ArtworkCard from '../components/Artwork';
-import SidebarCart from '../components/Filter';
+import Filter from '../components/Filter';
 import { useEffect, useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 
@@ -41,10 +41,11 @@ function ProductsPage() {
 
   return (
     <div className='p-7 pt-15'>
-      <SidebarCart />
+
       <div className='p-7 bg-(--bg-light) min-h-screen overflow-auto no-scrollbar'>
         <h1 className='font-bold text-4xl text-center mt-10 lg:mt-5'>Artworks</h1>
-        <div className='mt-10 mx-auto flex flex-row flex-wrap justify-center gap-6 lg:w-5xl sm:w-lg'>
+        <Filter className='ml-32' />
+        <div className='mt-5 mx-auto flex flex-row flex-wrap justify-center gap-6 w-lg lg:w-5xl'>
           {loading && <p className='text-center mt-10'>loading... uwu</p>}
           {error && <p className='text-center mt-10'>{error}</p>}
           {!loading && !error && (
