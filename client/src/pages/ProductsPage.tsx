@@ -10,6 +10,7 @@ interface ArtworkData {
   description: string;
   medium: string;
   price: number;
+  user: string;
 }
 
 function ProductsPage() {
@@ -55,6 +56,7 @@ function ProductsPage() {
                 description={artwork.description}
                 medium={artwork.medium}
                 price={artwork.price}
+                user={artwork.user.name}
                 onAddToCart={() => handleAddToCart}
               />
             ))
