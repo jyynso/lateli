@@ -8,6 +8,11 @@ const router = Router();
 
 router.get('/artworks', async (req, res) => {
   const artworks = await prisma.artwork.findMany({
+    include: {
+      user: {
+        select: {name: true }
+      }
+    }
   });
   res.json(artworks);
 });
