@@ -6,7 +6,6 @@ import HomePage from './pages/HomePage.tsx'
 import Register from './pages/Register.tsx';
 import Login from './pages/Login.tsx';
 import { AuthProvider } from './context/AuthContext.tsx';
-import ToggleTheme from './components/ToggleTheme';
 import Cart from './pages/Cart.tsx';
 import UploadArtwork from './pages/UploadArtworkPage.tsx'
 
@@ -25,7 +24,6 @@ import UploadArtwork from './pages/UploadArtworkPage.tsx'
 							<Route path='/uploadArtwork' element={<UploadArtwork />}/>
 						</Routes>
 					</BrowserRouter>
-					<ToggleTheme />
 				</div>
 			</AuthProvider>
     );
