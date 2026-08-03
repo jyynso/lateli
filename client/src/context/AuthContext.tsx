@@ -7,11 +7,15 @@ const AuthContext = createContext<{
   user: User;
   setUser: (u: User) => void;
   loading: boolean;
+  logout: () => void;
 } | null>(null);
 
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User>(null);
   const [loading, setLoading] = useState(true);
+  const logout = () => {
+    setUser(null);
+  };
 
   useEffect(() => {
     fetch('http://localhost:3000/api/auth/userWho', { credentials: 'include' })
@@ -21,7 +25,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ user, setUser, loading }}>
+    <AuthContext.Provider value={{ user, setUser, loading, logout }}>
       {children}
     </AuthContext.Provider>
   );
