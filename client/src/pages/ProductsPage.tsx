@@ -44,8 +44,8 @@ function ProductsPage() {
 
       <div className='p-7 bg-(--bg-light) min-h-screen overflow-auto no-scrollbar'>
         <h1 className='font-bold text-4xl text-center mt-10 lg:mt-5'>Artworks</h1>
-        <Filter className='ml-32' />
-        <div className='mt-5 mx-auto flex flex-row flex-wrap justify-center gap-6 w-lg lg:w-5xl'>
+        <Filter className='ml-0 lg:ml-32' />
+        <div className='mt-5 mx-auto flex flex-row flex-wrap justify-center gap-6 w-full lg:w-5xl'>
           {loading && <p className='text-center mt-10'>loading... uwu</p>}
           {error && <p className='text-center mt-10'>{error}</p>}
           {!loading && !error && (
@@ -58,7 +58,7 @@ function ProductsPage() {
                 medium={artwork.medium}
                 price={artwork.price}
                 user={artwork.user.name}
-                onAddToCart={() => handleAddToCart}
+                onAddToCart={handleAddToCart}
               />
             ))
           )}
