@@ -1,8 +1,10 @@
-
+import { useState } from "react";
 
 function ViewArtworkCard() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <div>
+    <div className="hidden">
 
     </div>
   );

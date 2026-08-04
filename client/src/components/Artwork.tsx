@@ -1,4 +1,5 @@
 import { BasketIcon } from "@phosphor-icons/react/dist/ssr";
+import Popup from "./PopupText";
 
 type ArtworkProps = {
     image: string;
@@ -14,8 +15,9 @@ type ArtworkProps = {
 
 function Artwork({ image, name, artist, description, medium, price, user, onAddToCart }: ArtworkProps) {
   return (
-    <div className='flex flex-col w-full lg:w-74 rounded-md bg-(--bg-card) drop-shadow'>
-      <img src={image} alt={name} className='rounded-t-md h-75 object-cover'/>
+    <div className='flex flex-col w-full lg:w-74 rounded-md transition-transform duration-200 hover:scale-103 hover:shadow-lg bg-(--bg-card) drop-shadow'>
+      <Popup text="view artwork"/>
+      <img src={image} alt={name} className='rounded-t-md h-70 object-cover'/>
       <div className='flex flex-1 flex-col gap-1 p-5'>
         <h1 className='text-xl font-semibold'>{name}</h1>
         <p>Artist: {artist}</p>

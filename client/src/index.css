@@ -30,7 +30,7 @@ html, body {
   transition: --bg-light 0.4s ease, --bg-card 0.4s ease, --text-black 0.4s ease;
 }
 
-html::-webkit-scrollbar, 
+html::-webkit-scrollbar,
 body::-webkit-scrollbar {
   display: none;
 }

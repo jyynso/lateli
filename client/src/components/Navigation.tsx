@@ -28,7 +28,7 @@ function Navigation() {
 					<ShoppingCartSimpleIcon size={30} weight='fill'/> 
 					<Popup text="Cart" />
 				</Link>
-				<Link to={"/login"} className='group relative'> 
+				<Link to={"/login"} className='text-sm font-semibold group relative'> 
 					{isLoggedIn ? <UserCircleIcon size={30} weight='fill'/> : "Sign in" }
 					<Popup text="Account" />
 				</Link>
