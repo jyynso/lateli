@@ -26,11 +26,11 @@ function Navigation() {
 				<Link to={"/products"} className='font-semibold hover:underline'>Artworks</Link>
 				<Link to={"/cart"} className='group relative'> 
 					<ShoppingCartSimpleIcon size={30} weight='fill'/> 
-					<Popup text="Cart" />
+					<Popup text="Cart" className='top-full mt-2 text-sm' />
 				</Link>
 				<Link to={"/login"} className='text-sm font-semibold group relative'> 
 					{isLoggedIn ? <UserCircleIcon size={30} weight='fill'/> : "Sign in" }
-					<Popup text="Account" />
+					<Popup className='top-full mt-2 text-sm' text={isLoggedIn ? "Account" : "Sign" } />
 				</Link>
     	</div>
     </div>
