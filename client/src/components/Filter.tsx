@@ -19,16 +19,9 @@ function Filter({className}: {className: string}) {
          Filters
       </button>
 
-      <div
-        className={`fixed inset-0 z-40 transition-opacity duration-200 ${isOpen ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"}`}
-      >
-        <div
-          className="absolute inset-0 bg-black/40"
-          onClick={() => setIsOpen(false)}
-        />
-        <div
-          className={`absolute top-0 left-0 h-full w-80 max-w-[85vw] bg-(--bg-white) p-4 shadow-xl transition-transform duration-300 ${isOpen ? "translate-x-0" : "-translate-x-full"}`}
-        >
+      <div className={`fixed inset-0 z-40 transition-opacity duration-200 ${isOpen ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"}`}>
+        <div className="absolute inset-0 bg-black/40" onClick={() => setIsOpen(false)}/>
+        <div className={`absolute top-0 left-0 h-full w-80 max-w-[85vw] bg-(--bg-white) p-4 shadow-xl transition-transform duration-300 ${isOpen ? "translate-x-0" : "-translate-x-full"}`}>
           <h2 className="text-lg font-semibold">Filters</h2>
           <p>Medium</p>
           <p>Price</p>
