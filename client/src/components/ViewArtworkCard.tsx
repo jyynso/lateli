@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import ZoomImage from '../components/ZoomImage';
 
 type ViewArtworkCardProps = {
   isOpen: boolean;
@@ -20,7 +21,7 @@ export default function ViewArtworkCard({ isOpen, onClose, artwork }: ViewArtwor
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
   const [artworks, setArtworks] = useState<ArtworkData[]>([]);
-  
+
   useEffect(() => {
     fetch('http://localhost:3000/api/artworks')
       .then(res => res.json())
@@ -40,9 +41,7 @@ export default function ViewArtworkCard({ isOpen, onClose, artwork }: ViewArtwor
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50" onClick={onClose}>
       <div className="flex flex-col lg:flex-row w-full h-150 lg:w-4xl lg:h-120 relative" onClick={(e) => e.stopPropagation()}>
-          <div className="bg-(--bg-white) rounded-l-md w-xs h-xs lg:w-md lg:h-md">
-            <img src={artwork.imageUrl} alt={artwork.name} className='w-full h-full object-scale-down'/>
-          </div>
+          <ZoomImage src={artwork.imageUrl} alt={artwork.name} />
           <div className="flex flex-col rounded-r-md p-5 w-xs lg:w-sm bg-(--bg-card)">
             <h1 className='text-xl font-semibold'>{artwork.name}</h1>
             <p>Artist: {artwork.artist}</p>
