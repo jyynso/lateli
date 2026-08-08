@@ -9,12 +9,11 @@ type ArtworkProps = {
     description: string;
     medium: string;
     price: number;
-    user: string;
-    onAddToCart: () => void;
+    user: string; 
     
 }
 
-function Artwork({ image, name, artist, description, medium, price, user, onAddToCart }: ArtworkProps) {
+function Artwork({ image, name, artist, description, medium, price, user }: ArtworkProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
@@ -28,14 +27,7 @@ function Artwork({ image, name, artist, description, medium, price, user, onAddT
           <p>Medium: {medium}</p>
           <p>Sold by: {user}</p>
             <div className='mt-auto flex items-center justify-between'>
-              <p className='text-lg font-semibold'>₱ {price}</p>
-              <button 
-                onClick={(e) => { 
-                  e.stopPropagation();
-                  onAddToCart}} 
-                className='ml-auto rounded-full cursor-pointer p-2 shadow-md backdrop-blur-sm hover:bg-(--accent-sandyBrown) transition-all duration-50  bg-(--bg-white)'>
-                <BasketIcon size={30} />
-              </button>
+              <p className='text-lg font-semibold'>₱{price}</p>
             </div>
         </div>
       </div>
