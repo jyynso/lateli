@@ -32,10 +32,6 @@ function ProductsPage() {
       })
   }, []);
 
-  const handleAddToCart = () => {
-    
-  };
-
   const { user } = useAuth();
   console.log(user);
 
@@ -57,7 +53,6 @@ function ProductsPage() {
                 medium={artwork.medium}
                 price={artwork.price}
                 user={artwork.user.name}
-                onAddToCart={handleAddToCart}
               />
             ))
           )}
