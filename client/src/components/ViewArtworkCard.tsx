@@ -40,8 +40,10 @@ export default function ViewArtworkCard({ isOpen, onClose, artwork }: ViewArtwor
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50" onClick={onClose}>
       <div className="flex flex-col lg:flex-row w-full h-150 lg:w-4xl lg:h-120 relative" onClick={(e) => e.stopPropagation()}>
-        <img src={artwork.imageUrl} alt={artwork.name} className='w-xs lg:w-full object-fill'/>
-          <div className="flex flex-col p-5 w-full bg-(--bg-card)">
+          <div className="bg-(--bg-white) rounded-l-md w-xs h-xs lg:w-md lg:h-md">
+            <img src={artwork.imageUrl} alt={artwork.name} className='w-full h-full object-scale-down'/>
+          </div>
+          <div className="flex flex-col rounded-r-md p-5 w-xs lg:w-sm bg-(--bg-card)">
             <h1 className='text-xl font-semibold'>{artwork.name}</h1>
             <p>Artist: {artwork.artist}</p>
             <p className="line-clamp-2">Description: {artwork.description}</p>
