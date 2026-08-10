@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import ZoomImage from '../components/ZoomImage';
-import { BasketIcon } from "@phosphor-icons/react/dist/ssr";
 
 type ViewArtworkCardProps = {
   isOpen: boolean;
