@@ -21,9 +21,10 @@ export default function ViewArtworkCard({ isOpen, onClose, artwork }: ViewArtwor
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
   const [artworks, setArtworks] = useState<ArtworkData[]>([]);
+  const [show, setShow] = useState(isOpen);
 
   const handleAddToCart = () => {
-    
+
   };
 
   useEffect(() => {
@@ -40,11 +41,48 @@ export default function ViewArtworkCard({ isOpen, onClose, artwork }: ViewArtwor
       })
     }, []);
 
-  if (!isOpen) return null;
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        onClose();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [onClose]);
+
+  useEffect(() => {
+    if (isOpen) setShow(true);
+  }, [isOpen]);
+
+  if (!show) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50" onClick={onClose}>
-      <div className="flex flex-col lg:flex-row w-full h-150 lg:w-4xl lg:h-120 relative" onClick={(e) => e.stopPropagation()}>
+    <div
+      className={`fixed inset-0 z-50 flex items-center justify-center bg-black/50 transition-opacity duration-200 ease-out ${
+        isOpen ? 'opacity-100' : 'opacity-0'
+      }`}
+      onClick={onClose}
+      onTransitionEnd={(e) => {
+        if (e.target === e.currentTarget && !isOpen) setShow(false);
+      }}
+    >
+      <div
+        className={`flex flex-col lg:flex-row w-full h-150 lg:w-4xl lg:h-120 relative transition-all duration-200 ease-out ${
+          isOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+        }`}
+        onClick={(e) => e.stopPropagation()}
+      >
           <ZoomImage src={artwork.imageUrl} alt={artwork.name} />
           <div className="flex flex-col gap-1 rounded-r-md p-8 w-xs lg:w-sm bg-(--bg-card)">
             <h1 className='text-3xl font-semibold pb-2'>{artwork.name}</h1>
@@ -53,9 +91,9 @@ export default function ViewArtworkCard({ isOpen, onClose, artwork }: ViewArtwor
             {artwork.medium && <p><span className="font-semibold">Medium:</span> {artwork.medium}</p>}
             <p><span className="font-semibold">Sold by:</span> {artwork.user}</p>
             <p className="text-2xl font-semibold py-2">₱{artwork.price}</p>
-            <button 
-              onClick={(e) => { 
-                e.stopPropagation();}} 
+            <button
+              onClick={(e) => {
+                e.stopPropagation();}}
                 className='m-3 mt-auto rounded-md cursor-pointer p-3 shadow-md transition-all duration-50  bg-(--accent-charcoalBlue) text-white'>
                 Add to cart
             </button>
@@ -64,4 +102,3 @@ export default function ViewArtworkCard({ isOpen, onClose, artwork }: ViewArtwor
     </div>
   );
 }
-                              

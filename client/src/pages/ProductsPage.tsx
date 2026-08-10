@@ -39,7 +39,7 @@ function ProductsPage() {
     <div className='lg:p-7 pt-15 overflow-x-hidden'>
       <div className='p-7 bg-(--bg-light) no-scrollbar'>
         <h1 className='font-bold text-4xl text-center mt-10 pt-5 lg:mt-5'>Artworks</h1>
-        <Filter className='ml-0 lg:ml-32' />
+        <Filter className='lg:ml-26' />
         <div className='mt-5 mx-auto flex flex-row flex-wrap justify-center gap-6 w-full lg:w-5xl'>
           {loading && <p className='text-center mt-10'>loading... uwu</p>}
           {error && <p className='text-center mt-10'>{error}</p>}

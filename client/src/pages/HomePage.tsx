@@ -8,7 +8,7 @@ function HomePage() {
         <h1 className='font-bold text-5xl'>discover</h1>
         <h1 className='font-bold text-5xl'>arts</h1>
         <h1 className='font-bold text-[9rem]'>lateli</h1>
-        <Link to={"/products"} className='bg-(--accent-charcoalBlue) w-30 ml-auto text-center rounded-md text-white p-2'>view artworks</Link>
+        <Link to={"/products"} className='bg-(--accent-charcoalBlue) w-20 ml-auto text-center rounded-md text-white p-2'>shop</Link>
       </div>
       <div className='flex flex-row gap-8 p-5'>
         <img className='h-70 mt-auto' src='../public/cafe.png' />
