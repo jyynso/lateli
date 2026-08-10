@@ -6,8 +6,8 @@ type ArtworkProps = {
     image: string;
     name: string;
     artist: string;
-    description: string;
-    medium: string;
+    description?: string;
+    medium?: string;
     price: number;
     user: string; 
     
@@ -23,9 +23,9 @@ function Artwork({ image, name, artist, description, medium, price, user }: Artw
         <div className='flex flex-1 flex-col gap-1 p-5'>
           <h1 className='text-xl font-semibold'>{name}</h1>
           <p>Artist: {artist}</p>
-          <p className="line-clamp-2">Description: {description}</p>
-          <p>Medium: {medium}</p>
-          <p>Sold by: {user}</p>
+          {description && <p>Description: {description}</p>}
+          {medium && <p>Medium: {medium}</p>}
+          <p>Listed by: {user}</p>
             <div className='mt-auto flex items-center justify-between'>
               <p className='text-lg font-semibold'>₱{price}</p>
             </div>

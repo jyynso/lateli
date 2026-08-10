@@ -11,8 +11,8 @@ interface ArtworkData {
   imageUrl: string;
   name: string;
   artist: string;
-  description: string;
-  medium: string;
+  description?: string;
+  medium?: string;
   price: number;
   user: string;
 }
@@ -49,8 +49,8 @@ export default function ViewArtworkCard({ isOpen, onClose, artwork }: ViewArtwor
           <div className="flex flex-col gap-1 rounded-r-md p-8 w-xs lg:w-sm bg-(--bg-card)">
             <h1 className='text-3xl font-semibold pb-2'>{artwork.name}</h1>
             <p><span className="font-semibold">Artist:</span> {artwork.artist}</p>
-            <p><span className="font-semibold">Description:</span> {artwork.description}</p>
-            <p><span className="font-semibold">Medium:</span> {artwork.medium}</p>
+            {artwork.description && <p><span className="font-semibold">Description:</span> {artwork.description}</p>}
+            {artwork.medium && <p><span className="font-semibold">Medium:</span> {artwork.medium}</p>}
             <p><span className="font-semibold">Sold by:</span> {artwork.user}</p>
             <p className="text-2xl font-semibold py-2">₱{artwork.price}</p>
             <button 

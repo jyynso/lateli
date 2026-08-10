@@ -48,9 +48,9 @@ function ProductsPage() {
               <ArtworkCard 
                 image={artwork.imageUrl}
                 name={artwork.name}
-                artist={artwork.artist}
                 description={artwork.description}
                 medium={artwork.medium}
+                artist={artwork.artist}
                 price={artwork.price}
                 user={artwork.user.name}
               />
