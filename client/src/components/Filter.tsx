@@ -14,7 +14,7 @@ function Filter({className}: {className: string}) {
         onClick={openFilter}
         aria-expanded={isOpen}
         aria-controls="sidebar-cart-panel"
-        className={`flex items-center gap-1 rounded-full font-semibold text-sm bg-white px-3 py-2 shadow-md ${className ?? ""}`}>
+        className={`flex items-center gap-1 rounded-full font-semibold text-sm bg-white px-3 py-2 drop-shadow transition-transform duration-200 hover:scale-103 hover:shadow-lg ${className ?? ""}`}>
          <SlidersHorizontalIcon size={18} weight="fill" /> 
          Filters
       </button>
