@@ -1,5 +1,5 @@
 import '/src/index.css'
-import { UserCircleIcon, ShoppingCartSimpleIcon, MagnifyingGlassIcon } from '@phosphor-icons/react/dist/ssr';
+import { UserCircleIcon, ShoppingCartSimpleIcon, MagnifyingGlassIcon, ImagesSquareIcon } from '@phosphor-icons/react/dist/ssr';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import Popup from './PopupText';
@@ -23,7 +23,10 @@ function Navigation() {
 			</form>
 
     	<div className='flex items-center gap-5 px-3'>
-				<Link to={"/products"} className='font-semibold hover:underline'>Artworks</Link>
+				<Link to={"/products"} className='group relative'> 
+					<ImagesSquareIcon size={30} weight='fill' />
+					<Popup text='Artworks' className='top-full mt-2 text-sm'/> 
+				</Link>
 				<Link to={"/cart"} className='group relative'> 
 					<ShoppingCartSimpleIcon size={30} weight='fill'/> 
 					<Popup text="Cart" className='top-full mt-2 text-sm' />
