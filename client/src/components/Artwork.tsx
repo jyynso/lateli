@@ -22,10 +22,10 @@ function Artwork({ image, name, artist, description, medium, price, user, showDe
         <img src={image} alt={name} className='rounded-t-md h-70 object-cover'/>
         <div className='flex flex-1 flex-col gap-1 p-5'>
           <h1 className='text-xl font-semibold'>{name}</h1>
-          <p>Artist: {artist}</p>
+          <p><span className="font-semibold">Artist:</span> {artist}</p>
           {showDetails && description && <p>Description: {description}</p>}
           {showDetails && medium && <p>Medium: {medium}</p>}
-          <p>Listed by: {user}</p>
+          <p><span className="font-semibold">Listed by:</span> {user}</p>
             <div className='mt-auto flex items-center justify-between'>
               <p className='text-lg font-semibold'>₱{price}</p>
             </div>

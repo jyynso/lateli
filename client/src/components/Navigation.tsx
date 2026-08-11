@@ -9,9 +9,8 @@ function Navigation() {
 	const isLoggedIn = Boolean(user);
 
   return (
-  	<div className='sm:flex-row fixed top-0 left-0 z-40 flex flex-wrap w-full items-center justify-between gap-1 p-3'>
+  	<div className='sm:flex-row flex flex-wrap w-full items-center justify-between gap-1 p-3'>
 			<Link to={"/"} className='font-bold text-2xl px-3'>lateli</Link>
-
     	<div className='flex items-center gap-5 px-3'>
 				<Link to={"/products"} className='group relative'> 
 					<ImagesSquareIcon size={30} weight='fill' />
