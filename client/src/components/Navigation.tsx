@@ -16,10 +16,6 @@ function Navigation() {
 					<ImagesSquareIcon size={30} weight='fill' />
 					<Popup text='Artworks' className='top-full mt-2 text-sm'/> 
 				</Link>
-				<Link to={"/cart"} className='group relative'> 
-					<ShoppingCartSimpleIcon size={30} weight='fill'/> 
-					<Popup text="Cart" className='top-full mt-2 text-sm' />
-				</Link>
 				<Link to={"/login"} className='text-sm font-semibold group relative'> 
 					{isLoggedIn ? <UserCircleIcon size={30} weight='fill'/> : "Sign in" }
 					<Popup className='top-full mt-2 text-sm' text={isLoggedIn ? "Account" : "Sign" } />

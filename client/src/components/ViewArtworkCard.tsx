@@ -23,7 +23,7 @@ export default function ViewArtworkCard({ isOpen, onClose, artwork }: ViewArtwor
   const [artworks, setArtworks] = useState<ArtworkData[]>([]);
   const [show, setShow] = useState(isOpen);
 
-  const handleAddToCart = () => {
+  const handleCheckout = () => {
 
   };
 
@@ -93,9 +93,9 @@ export default function ViewArtworkCard({ isOpen, onClose, artwork }: ViewArtwor
             <p className="text-2xl font-semibold py-2">₱{artwork.price}</p>
             <button
               onClick={(e) => {
-                e.stopPropagation();}}
+                e.stopPropagation(); handleCheckout}}
                 className='m-3 mt-auto rounded-md cursor-pointer p-3 shadow-md transition-all duration-50  bg-(--accent-charcoalBlue) text-white'>
-                Add to cart
+                Checkout
             </button>
           </div>
         </div>
