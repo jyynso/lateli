@@ -97,7 +97,7 @@ export default function Register() {
   const pwdStrength = getPwdStrength(pwdScore);
 
   return (
-    <div className='flex items-center justify-center min-h-screen '>
+    <div className='flex items-center justify-center mt-10'>
        <form onSubmit={handleSubmit} className='flex flex-col text-center w-sm p-5 gap-5 rounded-md bg-(--bg-card)'>
           <h1 className='font-semibold text-lg'>Create Account</h1>
           <div className='flex items-center p-2 gap-2 rounded-md border-2 focus-within:border-(--accent-sandyBrown)'>

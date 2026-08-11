@@ -57,7 +57,7 @@ function Login() {
   };
 
   return (
-    <div className='flex items-center justify-center min-h-screen '>
+    <div className='flex items-center justify-center mt-50 lg:mt-20'>
        <form onSubmit={handleSubmit} className='flex flex-col text-center w-sm p-5 gap-5 rounded-md drop-shadow-lg bg-(--bg-card)'>
           <h1 className='font-semibold text-lg'>Login</h1>
           <div className='flex items-center p-2 gap-2 rounded-md border-2 focus-within:border-(--accent-coral)'>
