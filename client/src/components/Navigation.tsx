@@ -1,5 +1,5 @@
 import '/src/index.css'
-import { UserCircleIcon, ShoppingCartSimpleIcon, MagnifyingGlassIcon, ImagesSquareIcon } from '@phosphor-icons/react/dist/ssr';
+import { UserCircleIcon, ImagesSquareIcon } from '@phosphor-icons/react/dist/ssr';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import Popup from './PopupText';

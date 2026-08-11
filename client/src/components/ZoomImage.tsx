@@ -13,11 +13,10 @@ export default function ZoomImage({ src, alt }: { src: string; alt: string }) {
 
   return (
     <div
-      className="bg-(--bg-white) relative overflow-hidden cursor-zoom-in rounded-l-md w-xs h-xs lg:w-md lg:h-md"
+      className="bg-white rounded-t-md lg:rounded-t-none lg:rounded-l-md relative overflow-hidden cursor-zoom-in w-sm h-full lg:w-2xl lg:h-md"
       onMouseEnter={() => setZoom(true)}
       onMouseLeave={() => setZoom(false)}
-      onMouseMove={handleMouseMove}
-    >
+      onMouseMove={handleMouseMove}>
       <img
         src={src}
         alt={alt}
@@ -26,8 +25,7 @@ export default function ZoomImage({ src, alt }: { src: string; alt: string }) {
           zoom
             ? { transform: "scale(2)", transformOrigin: `${pos.x}% ${pos.y}%` }
             : {}
-        }
-      />
+          }/>
     </div>
   );
 }

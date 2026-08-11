@@ -69,22 +69,13 @@ export default function ViewArtworkCard({ isOpen, onClose, artwork }: ViewArtwor
 
   return (
     <div
-      className={`fixed inset-0 z-50 flex items-center justify-center bg-black/50 transition-opacity duration-200 ease-out ${
-        isOpen ? 'opacity-100' : 'opacity-0'
-      }`}
-      onClick={onClose}
-      onTransitionEnd={(e) => {
-        if (e.target === e.currentTarget && !isOpen) setShow(false);
-      }}
-    >
+        className={`fixed inset-0 z-50 flex items-center justify-center bg-black/50 transition-opacity duration-200 ease-out ${
+        isOpen ? 'opacity-100' : 'opacity-0' }`} onClick={onClose} onTransitionEnd={(e) => {if (e.target === e.currentTarget && !isOpen) setShow(false);}}>
       <div
-        className={`flex flex-col lg:flex-row w-full h-150 lg:w-4xl lg:h-120 relative transition-all duration-200 ease-out ${
-          isOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
-        }`}
-        onClick={(e) => e.stopPropagation()}
-      >
+        className={`flex flex-col items-center lg:flex-row w-full h-200 lg:w-4xl lg:h-120 relative transition-all duration-200 ease-out ${
+          isOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-95' }`} onClick={(e) => e.stopPropagation()}>
           <ZoomImage src={artwork.imageUrl} alt={artwork.name} />
-          <div className="flex flex-col gap-1 rounded-r-md p-8 w-xs lg:w-sm bg-(--bg-card)">
+          <div className="flex flex-col gap-1 rounded-b-md lg:rounded-bl-none lg:rounded-r-md p-8 w-sm h-sm lg:h-full lg:w-sm bg-(--bg-card)">
             <h1 className='text-3xl font-semibold pb-2'>{artwork.name}</h1>
             <p><span className="font-semibold">Artist:</span> {artwork.artist}</p>
             {artwork.description && <p><span className="font-semibold">Description:</span> {artwork.description}</p>}
