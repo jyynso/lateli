@@ -5,7 +5,7 @@ import { useAuth } from '../context/AuthContext';
 import Popup from './PopupText';
 
 function Navigation() {
-	const { user, logout } = useAuth();
+	const { user } = useAuth();
 	const isLoggedIn = Boolean(user);
 
   return (
