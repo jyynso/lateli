@@ -13,12 +13,12 @@ function AccountDropdown() {
       </span>
       <ul className="mt-2 space-y-2 text-sm">
         <li>
-          <Link to="/upload" className="flex flex-row gap-2 items-center font-semibold">
+          <Link to="/upload" className="flex flex-row gap-2 items-center font-semibold cursor-pointer">
           <TrayArrowUpIcon size={25} weight="fill" />
           Upload
           </Link>
         </li>
-        <li className="flex flex-row gap-2 items-center font-semibold">
+        <li className="flex flex-row gap-2 items-center font-semibold cursor-pointer">
           <SignOutIcon size={25} weight="fill"/> 
           <button onClick={logout}>Logout</button>
         </li>
