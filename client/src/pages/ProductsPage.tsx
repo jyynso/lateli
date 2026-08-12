@@ -45,7 +45,7 @@ function ProductsPage() {
           {error && <p className='text-center mt-10'>{error}</p>}
           {!loading && !error && (
             artworks.map((artwork: any) => (
-              <ArtworkCard 
+              <ArtworkCard key={artwork.id}
                 image={artwork.imageUrl}
                 name={artwork.name}
                 description={artwork.description}
