@@ -10,9 +10,10 @@ import Cart from './pages/Cart.tsx';
 import UploadArtwork from './pages/UploadArtworkPage.tsx'
 
   function App() {
+
     return (
 			<AuthProvider>
-				<div className='flex flex-col text-(--text-black) font-archivo bg-white min-h-screen overflow-auto no-scrollbar'>
+				<div className='flex flex-col text-(--text-black) font-archivo min-h-screen overflow-auto no-scrollbar'>
 					<BrowserRouter>
 						<Navigation />
 						<Routes>
@@ -21,7 +22,7 @@ import UploadArtwork from './pages/UploadArtworkPage.tsx'
 							<Route path='/register' element={<Register />}/>
 							<Route path='/login' element={<Login />}/>
 							<Route path='/cart' element={<Cart />}/>
-							<Route path='/uploadArtwork' element={<UploadArtwork />}/>
+							<Route path='/upload' element={<UploadArtwork />}/>
 						</Routes>
 					</BrowserRouter>
 				</div>
