@@ -52,42 +52,43 @@ function UploadArtwork() {
 
   return (
     <div>
-      <div className="flex flex-col justify-center items-center min-h-screen">
-        <form onSubmit={handleSubmit} className="flex flex-row gap-4 rounded-md shadow-md bg-(--bg-card)">
-          
-          <div className="group relative h-100 w-90">
-            <img src={previewUrl} className="h-full w-full rounded-l-md object-cover"/>
-            <label className="absolute inset-0 flex cursor-pointer items-center justify-center rounded-l-md bg-black/50 opacity-0 transition-opacity group-hover:opacity-100">
+      <div className="flex min-h-screen flex-col items-center justify-center px-4 py-8 sm:px-6">
+        <form
+          onSubmit={handleSubmit}
+          className="flex w-full max-w-4xl flex-col overflow-hidden rounded-md bg-(--bg-card) shadow-md sm:flex-row"
+        >
+          <div className="group relative h-64 w-full sm:h-100 sm:w-90">
+            <img src={previewUrl} className="h-full w-full object-cover sm:rounded-l-md" alt="Artwork preview" />
+            <label className="absolute inset-0 flex cursor-pointer items-center justify-center bg-black/50 opacity-0 transition-opacity group-hover:opacity-100 sm:rounded-l-md">
               <span className="text-sm font-medium text-white">Upload image</span>
-              <input type="file" className="hidden" onChange={handleFileChange}/>
+              <input type="file" className="hidden" onChange={handleFileChange} />
             </label>
           </div>
 
-          <div className="flex flex-col items-center w-70 gap-4 p-5">
+          <div className="flex w-full flex-col items-center gap-4 p-4 sm:w-70 sm:p-5">
             <h1 className="font-semibold">Upload an Artwork</h1>
 
-            <div className="flex items-center w-60 p-2 gap-2 rounded-md border-2 focus-within:border-(--accent-coral)">
-              <input type="text" onChange={(e) => setTitle(e.target.value)} placeholder="Artwork name" className="outline-none bg-transparent text-sm w-full"/>
+            <div className="flex w-full items-center gap-2 rounded-md border-2 p-2 focus-within:border-(--accent-coral) sm:w-60">
+              <input type="text" onChange={(e) => setTitle(e.target.value)} placeholder="Artwork name" className="w-full bg-transparent text-sm outline-none" />
             </div>
-            <div className="flex items-center w-60 p-2 gap-2 rounded-md border-2 focus-within:border-(--accent-coral)">
-              <input type="text" onChange={(e) => setArtist(e.target.value)} placeholder="Artist Name" className="outline-none bg-transparent text-sm w-full"/>
+            <div className="flex w-full items-center gap-2 rounded-md border-2 p-2 focus-within:border-(--accent-coral) sm:w-60">
+              <input type="text" onChange={(e) => setArtist(e.target.value)} placeholder="Artist Name" className="w-full bg-transparent text-sm outline-none" />
             </div>
-            <div className="flex items-center w-60 p-2 gap-2 rounded-md border-2 focus-within:border-(--accent-coral)">
-              <input type="text" onChange={(e) => setDescription(e.target.value)} placeholder="Description" className="outline-none bg-transparent text-sm w-full"/>
+            <div className="flex w-full items-center gap-2 rounded-md border-2 p-2 focus-within:border-(--accent-coral) sm:w-60">
+              <input type="text" onChange={(e) => setDescription(e.target.value)} placeholder="Description" className="w-full bg-transparent text-sm outline-none" />
             </div>
-            <div className="flex items-center w-60 p-2 gap-2 rounded-md border-2 focus-within:border-(--accent-coral)">
-              <input type="text" onChange={(e) => setMedium(e.target.value)} placeholder="Medium" className="outline-none bg-transparent text-sm w-full"/>
+            <div className="flex w-full items-center gap-2 rounded-md border-2 p-2 focus-within:border-(--accent-coral) sm:w-60">
+              <input type="text" onChange={(e) => setMedium(e.target.value)} placeholder="Medium" className="w-full bg-transparent text-sm outline-none" />
             </div>
-            <div className="flex items-center w-60 p-2 gap-2 rounded-md border-2 focus-within:border-(--accent-coral)">
-              <input type="number" onChange={(e) => setPrice(e.target.value)} placeholder="Price" className="outline-none bg-transparent text-sm w-full"/>
+            <div className="flex w-full items-center gap-2 rounded-md border-2 p-2 focus-within:border-(--accent-coral) sm:w-60">
+              <input type="number" onChange={(e) => setPrice(e.target.value)} placeholder="Price" className="w-full bg-transparent text-sm outline-none" />
             </div>
 
-            <button type='submit' className='text-sm w-60 p-2 cursor-pointer bg-(--accent-charcoalBlue) text-white rounded'>
+            <button type="submit" className="w-full cursor-pointer rounded bg-(--accent-charcoalBlue) p-2 text-sm text-white sm:w-60">
               Submit
             </button>
           </div>
         </form>
-
       </div>
     </div>
   );
