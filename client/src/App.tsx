@@ -12,7 +12,7 @@ import UploadArtwork from './pages/UploadArtworkPage.tsx'
   function App() {
     return (
 			<AuthProvider>
-				<div className='flex flex-col text-(--text-black) font-archivo bg-(--bg-light) min-h-screen overflow-auto no-scrollbar'>
+				<div className='flex flex-col text-(--text-black) font-archivo bg-white min-h-screen overflow-auto no-scrollbar'>
 					<BrowserRouter>
 						<Navigation />
 						<Routes>

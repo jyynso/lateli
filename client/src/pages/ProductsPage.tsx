@@ -37,7 +37,7 @@ function ProductsPage() {
 
   return (
     <div className='overflow-x-hidden'>
-      <div className='p-7 bg-(--bg-light) no-scrollbar'>
+      <div className='p-7 bg-white no-scrollbar'>
         <h1 className='font-bold text-4xl text-center'>Artworks</h1>
         <Filter className='lg:ml-34' />
         <div className='mt-5 mx-auto flex flex-row flex-wrap justify-center gap-6 w-full lg:w-5xl'>
