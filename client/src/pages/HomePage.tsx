@@ -12,11 +12,11 @@ function HomePage() {
             Art
           </h1>
           <h1 className="text-[12vw] font-bold leading-none text-(--accent-charcoalBlue)">
-            Market<span className='text-transparent' style={{WebkitTextStroke: '2px black',}}>place</span>
+            Market<span className='text-transparent' style={{WebkitTextStroke: '2px white',}}>place</span>
           </h1>
 
           <div className='items-center justify-center mt-20'>
-            <h2 className='text-[4vw] text-(--accent-charcoalBlue) font-semibold absolute top-110 left-110'>lateli</h2>
+            <h2 className='text-[4vw] text-(--accent-orange) font-semibold absolute top-110 left-110'>lateli</h2>
             <Link to={"/products"} className='absolute right-16 top-120 font-bold text-white'>
               browse
             </Link>
