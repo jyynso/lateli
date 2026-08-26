@@ -98,9 +98,9 @@ export default function Register() {
 
   return (
     <div className='flex items-center justify-center mt-10'>
-       <form onSubmit={handleSubmit} className='flex flex-col text-center w-sm p-5 gap-5 rounded-md bg-(--bg-card)'>
-          <h1 className='font-semibold text-lg'>Create Account</h1>
-          <div className='flex items-center p-2 gap-2 rounded-md border-2 focus-within:border-(--accent-sandyBrown)'>
+       <form onSubmit={handleSubmit} className='flex flex-col text-center w-sm p-5 gap-5 bg-white'>
+          <h1 className='font-semibold mb-6 text-3xl'>Create Account</h1>
+          <div className='flex items-center p-2 gap-2 border-2 focus-within:border-(--accent-sandyBrown)'>
             <UserIcon size={22} className='text-gray-400' />
             <input 
             type='text' 
@@ -112,7 +112,7 @@ export default function Register() {
             className='outline-none bg-transparent text-sm w-full'
             />
           </div>
-          <div className='flex items-center p-2 gap-2 rounded-md border-2 focus-within:border-(--accent-sandyBrown)'>
+          <div className='flex items-center p-2 gap-2 border-2 focus-within:border-(--accent-sandyBrown)'>
             <EnvelopeSimpleIcon size={22} className='text-gray-400' />
             <input 
             type='email' 
@@ -124,7 +124,7 @@ export default function Register() {
             className='outline-none bg-transparent text-sm w-full'
             />
           </div>
-          <div className='flex items-center p-2 gap-2 rounded-md border-2 focus-within:border-(--accent-sandyBrown)'>
+          <div className='flex items-center p-2 gap-2 border-2 focus-within:border-(--accent-sandyBrown)'>
             <LockKeyIcon size={22} className='text-gray-400' />
             <input 
             type={showPwd ? 'text' : 'password'} 
@@ -151,7 +151,7 @@ export default function Register() {
             <p className='text-xs font-medium text-gray-500 text-right'>{pwdStrength.text}</p>
           </div>
 
-          <div className='flex items-center p-2 gap-2 rounded-md border-2 focus-within:border-(--accent-sandyBrown)'>
+          <div className='flex items-center p-2 gap-2 border-2 focus-within:border-(--accent-sandyBrown)'>
             <LockKeyIcon size={22} className='text-gray-400' />
             <input 
             type={showPwd ? 'text' : 'password'} 
@@ -181,7 +181,7 @@ export default function Register() {
 
           {error && <p className='text-xs text-red-500'>{error}</p>}
 
-          <button type='submit' disabled={loading} className='text-sm p-2 bg-(--accent-charcoalBlue) text-white rounded'>
+          <button type='submit' disabled={loading} className='text-sm p-2 bg-(--accent-charcoalBlue) text-white cursor-pointer'>
             {loading ? 'Creating account...' : 'Submit'}
           </button>
         </form>

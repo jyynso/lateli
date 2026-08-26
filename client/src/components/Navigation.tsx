@@ -36,9 +36,13 @@ function Navigation() {
             onClick={() => setMenuOpen((prev) => !prev)}
             className="group relative cursor-pointer"
             aria-label="Open account menu" >
-              <UserCircleIcon size={30} weight="fill" />
+              <UserCircleIcon
+                size={30}
+                weight="fill"
+                fill={menuOpen ? "orange" : undefined}
+              />
           </button>
-				  <div className={`absolute right-0 top-full mt-2 z-50 transition-all duration-150 ease-out origin-top-right
+				  <div className={`absolute right-0 top-full mt-1 z-50 transition-all duration-150 ease-out origin-top-right
       			${menuOpen 
         			? 'opacity-100 scale-100 pointer-events-auto' 
         			: 'opacity-0 scale-95 pointer-events-none'}`} >

@@ -58,9 +58,9 @@ function Login() {
 
   return (
     <div className='flex items-center justify-center mt-50 lg:mt-20'>
-       <form onSubmit={handleSubmit} className='flex flex-col text-center w-sm p-5 gap-5 rounded-md drop-shadow-lg bg-(--bg-card)'>
-          <h1 className='font-semibold text-lg'>Login</h1>
-          <div className='flex items-center p-2 gap-2 rounded-md border-2 focus-within:border-(--accent-coral)'>
+       <form onSubmit={handleSubmit} className='flex flex-col text-center w-sm p-5 gap-5  bg-white'>
+          <h1 className='font-semibold text-3xl mb-6'>Login</h1>
+          <div className='flex items-center p-2 gap-2 border-2 focus-within:border-(--accent-coral)'>
             <EnvelopeSimpleIcon size={22} className='text-gray-400' />
             <input 
             type='email' 
@@ -72,7 +72,7 @@ function Login() {
             className='outline-none bg-transparent text-sm w-full'
             />
           </div>
-          <div className='flex items-center p-2 gap-2 rounded-md border-2 focus-within:border-(--accent-coral)'>
+          <div className='flex items-center p-2 gap-2 border-2 focus-within:border-(--accent-coral)'>
             <LockKeyIcon size={22} className='text-gray-400' />
             <input 
             type={showPwd ? 'text' : 'password'} 
@@ -94,7 +94,7 @@ function Login() {
 
           {error ? <p className='text-sm text-red-500'>{error}</p> : null}
 
-          <button type='submit' className='text-sm p-2 cursor-pointer bg-(--accent-charcoalBlue) text-white rounded'>
+          <button type='submit' className='text-sm p-2 cursor-pointer bg-(--accent-charcoalBlue) text-white'>
             {loading ? 'Logging in...' : 'Login'}
           </button>
 

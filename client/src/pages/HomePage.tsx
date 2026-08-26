@@ -12,7 +12,7 @@ function HomePage() {
             Art
           </h1>
           <h1 className="text-[12vw] font-bold leading-none text-(--accent-charcoalBlue)">
-            Market<span className='text-amber-300'>place</span>
+            Market<span className='text-transparent' style={{WebkitTextStroke: '2px black',}}>place</span>
           </h1>
 
           <div className='items-center justify-center mt-20'>

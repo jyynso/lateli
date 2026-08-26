@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <div className="p-6 lg:px-20 mt-20 ">
+    <div className="p-6 lg:px-20 mt-40 ">
       <section id='footer'>
         <span className="block h-px bg-black"/>
         <div className="py-10 flex flex-row justify-between">
