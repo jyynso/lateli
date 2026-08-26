@@ -23,7 +23,7 @@ function Navigation() {
 
   return (
   	<div className='sm:flex-row flex flex-wrap w-full items-center justify-between gap-1 p-3'>
-			<Link to={"/"} className='font-serif text-2xl px-2 italic font-bold text-(--accent-charcoalBlue) whitespace-nowrap'>lateli</Link>
+			<Link to={"/"} className='text-2xl px-2  font-semibold text-(--accent-charcoalBlue) whitespace-nowrap'>lateli</Link>
     	<div className='flex items-center gap-5 px-3'>
 				<Link to={"/products"} className='group relative'> 
 					<ImagesSquareIcon size={30} weight='fill' />

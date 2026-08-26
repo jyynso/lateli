@@ -1,27 +1,44 @@
 import '/src/index.css'
 import { Link } from 'react-router-dom';
-
 function HomePage() {
   return (
-    <div className='relative flex flex-col lg:flex-row items-center lg:items-start justify-between p-6 lg:px-20 h-screen overflow-hidden'>
-      <div className='flex flex-col mt-4 lg:mt-10 z-10 relative'>
-        <p className='uppercase tracking-[0.3em] text-xs mb-3 font-medium'> an art marketplace </p>
-        <h1 className='text-5xl lg:text-6xl leading-[0.95]'> discover </h1>
-        <h1 className='text-5xl lg:text-6xl leading-[0.95]'> original arts </h1>
-        <h1 className='font-serif italic font-normal text-[6rem] lg:text-[9rem] leading-[0.85] py-2 -ml-1 text-(--accent-charcoalBlue) whitespace-nowrap'> lateli </h1>
-        <Link 
-          to={"/products"} 
-          className='group inline-flex items-center gap-2 bg-[#1C1C1C] w-fit mt-6 text-white text-sm tracking-wide rounded-full px-6 py-3 transition-colors hover:bg-(--accent-charcoalBlue)'>
-          browse
-          <span className='transition-transform group-hover:translate-x-1'>→</span>
-        </Link>
-      </div>
-      <div className='relative w-full lg:w-1/2 h-64 lg:h-full mt-10 lg:mt-0'>
-        <img className='absolute top-[8%] left-[10%] lg:left-[15%] w-40 lg:w-56 -rotate-6 rounded-sm shadow-xl ring-8 ring-white'
-          src='../public/cafe.png' />
-        <img className='absolute bottom-[5%] right-[5%] lg:right-[10%] w-44 lg:w-64 rotate-[4deg] rounded-sm shadow-xl ring-8 ring-white z-10'
-          src='../public/Collage.png' />
-      </div>
+    <div className='p-6 lg:px-20 min-h-screen'>
+
+      <section id='hero' className="relative h-full">
+        <img className="absolute right-8 top-10 z-10 w-[48vw]" src="./pexels-orange.jpg" alt="" />
+
+        <div className="relative z-20">
+          <h1 className="text-[12vw] font-bold leading-none text-(--accent-charcoalBlue)">
+            Art
+          </h1>
+          <h1 className="text-[12vw] font-bold leading-none text-(--accent-charcoalBlue)">
+            Market<span className='text-amber-300'>place</span>
+          </h1>
+
+          <div className='items-center justify-center mt-20'>
+            <h2 className='text-[4vw] text-(--accent-charcoalBlue) font-semibold absolute top-110 left-110'>lateli</h2>
+            <Link to={"/products"} className='absolute right-16 top-120 font-bold text-white'>
+              browse
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section id='what-lateli' className='flex flex-row items-center justify-between mt-80 mx-30'>
+        <h2 className='text-[2vw] font-semibold'>What is lateli?</h2>
+        <span className='flex flex-col w-100'>
+          <h3 className='font-semibold'>Lorem ipsum</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi hendrerit eleifend mauris, vel volutpat ligula mattis quis. Nulla non tincidunt orci, sed sodales risus. Phasellus at molestie lectus, faucibus eleifend sem. </p>
+        </span>
+      </section>
+
+      <section id='why-lateli' className='flex flex-row items-center justify-between my-50 mx-30'>
+        <h2 className='text-[2vw] font-semibold'>Why use lateli?</h2>
+        <span className='flex flex-col w-100 '>
+          <h3 className='font-semibold'>Lorem ipsum</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi hendrerit eleifend mauris, vel volutpat ligula mattis quis. Nulla non tincidunt orci, sed sodales risus. Phasellus at molestie lectus, faucibus eleifend sem. </p>
+        </span>
+      </section>
     </div>
   );
 }
