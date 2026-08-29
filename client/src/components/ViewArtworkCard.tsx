@@ -69,7 +69,7 @@ export default function ViewArtworkCard({ isOpen, onClose, artwork }: ViewArtwor
 
   return (
     <div
-        className={`fixed inset-0 z-50 flex items-center justify-center bg-black/50 transition-opacity duration-200 ease-out ${
+        className={`fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm transition-opacity duration-200 ease-out ${
         isOpen ? 'opacity-100' : 'opacity-0' }`} onClick={onClose} onTransitionEnd={(e) => {if (e.target === e.currentTarget && !isOpen) setShow(false);}}>
       <div
         className={`flex flex-col items-center lg:flex-row w-full h-200 lg:w-4xl lg:h-120 relative transition-all duration-200 ease-out ${
@@ -85,7 +85,7 @@ export default function ViewArtworkCard({ isOpen, onClose, artwork }: ViewArtwor
             <button
               onClick={(e) => {
                 e.stopPropagation(); handleCheckout}}
-                className='m-3 mt-auto rounded-md cursor-pointer p-3 shadow-md transition-all duration-50  bg-(--accent-charcoalBlue) text-white'>
+                className='m-3 mt-auto rounded-sm cursor-pointer p-3 shadow-md transition-all duration-50  bg-black text-white'>
                 Checkout
             </button>
           </div>

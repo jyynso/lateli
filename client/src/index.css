@@ -3,13 +3,6 @@
 
 @theme {
   --font-archivo: 'Archivo', sans-serif;
-  --bg-white: #faf9f7;
-  --bg-light: #fafafa;
-  --bg-card: #FFF3F0;
-  --text-black: #383D3B;
-  --accent-sandyBrown: #F19953;
-  --accent-sunflowerGold: #F3B61F;
-  --accent-charcoalBlue: #424C55;
   --accent-orange: #c94401;
 }
 
