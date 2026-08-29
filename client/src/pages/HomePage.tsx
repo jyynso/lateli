@@ -8,10 +8,10 @@ function HomePage() {
         <img className="absolute right-8 top-10 z-10 w-[48vw]" src="./pexels-orange.jpg" alt="" />
 
         <div className="relative z-20">
-          <h1 className="text-[12vw] font-bold leading-none text-(--accent-charcoalBlue)">
+          <h1 className="text-[12vw] font-bold leading-none">
             Art
           </h1>
-          <h1 className="text-[12vw] font-bold leading-none text-(--accent-charcoalBlue)">
+          <h1 className="text-[12vw] font-bold leading-none">
             Market<span className='text-transparent' style={{WebkitTextStroke: '2px white',}}>place</span>
           </h1>
 

@@ -8,9 +8,9 @@ function Footer() {
         <div className="py-10 flex flex-row justify-between">
           <h2 className="font-semibold text-xl">lateli</h2>
           <span className="flex flex-row gap-20">
-            <Link to={"/products"} className="font-semibold text-xl">browse</Link>
+            <Link to={"/products"} className="font-semibold">browse</Link>
             <button 
-              className="font-semibold text-xl cursor-pointer"
+              className="font-semibold cursor-pointer"
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
               back to top
             </button>

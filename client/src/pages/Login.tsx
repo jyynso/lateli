@@ -94,11 +94,11 @@ function Login() {
 
           {error ? <p className='text-sm text-red-500'>{error}</p> : null}
 
-          <button type='submit' className='text-sm p-2 cursor-pointer bg-(--accent-charcoalBlue) text-white'>
+          <button type='submit' className='text-sm p-2 cursor-pointer bg-black text-white'>
             {loading ? 'Logging in...' : 'Login'}
           </button>
 
-          <Link to={"/register"} className='text-sm text-(--text-black)'>Make an account</Link>
+          <Link to={"/register"} className='text-sm'>Make an account</Link>
         </form>
     </div>
   );

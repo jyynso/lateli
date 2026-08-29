@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { UserCircleIcon, ImagesSquareIcon } from '@phosphor-icons/react/dist/ssr';
+import { UserSquareIcon, ImageSquareIcon } from '@phosphor-icons/react/dist/ssr';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import Popup from './PopupText';
@@ -23,10 +23,10 @@ function Navigation() {
 
   return (
   	<div className='sm:flex-row flex flex-wrap w-full items-center justify-between gap-1 p-3'>
-			<Link to={"/"} className='text-2xl px-2  font-semibold text-(--accent-charcoalBlue) whitespace-nowrap'>lateli</Link>
+			<Link to={"/"} className='text-xl px-2 font-semibold whitespace-nowrap'>lateli</Link>
     	<div className='flex items-center gap-5 px-3'>
 				<Link to={"/products"} className='group relative'> 
-					<ImagesSquareIcon size={30} weight='fill' />
+					<ImageSquareIcon size={30} weight='fill' />
 					<Popup text='Artworks' className='top-full mt-2 text-sm'/> 
 				</Link>
 		 {isLoggedIn ? (
@@ -36,7 +36,7 @@ function Navigation() {
             onClick={() => setMenuOpen((prev) => !prev)}
             className="group relative cursor-pointer"
             aria-label="Open account menu" >
-              <UserCircleIcon
+              <UserSquareIcon
                 size={30}
                 weight="fill"
                 fill={menuOpen ? "orange" : undefined}
@@ -49,12 +49,12 @@ function Navigation() {
     					<AccountDropdown />
   				</div>
         </div>
-        ) : (
-          <Link to="/login" className="text-sm font-semibold group relative">
-            Sign in
-            <Popup className="top-full mt-2 text-sm" text="Sign" />
-          </Link>
-        )}
+          ) : (
+            <Link to="/login" className="text-sm font-semibold group relative">
+              Sign in
+              <Popup className="top-full mt-2 text-sm" text="Sign" />
+            </Link>
+          )}
     	</div>
     </div>
     );
