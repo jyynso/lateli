@@ -35,6 +35,7 @@ function Navigation() {
 					<ImageSquareIcon size={30} weight='fill' />
 					<Popup text='Artworks' className='top-full mt-2 text-sm'/> 
 				</Link>
+        
         {isLoggedIn ? (
           <div className="relative flex justify-center" ref={menuRef}>
             <button

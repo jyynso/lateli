@@ -13,19 +13,17 @@ services:
       - mysql_data:/var/lib/mysql
 
   server:
-    build:
-      context: ./server
+    build: 
+      context: ./lrvl-server
       dockerfile: server.dev
     ports:
-      - "3000:3000"
+      - "8000:8000"
     volumes:
-      - ./server:/app
-      - /app/node_modules
-      - /app/src/generated
-    env_file:
-      - ./server/.env
+      - ./lrvl-server:/app
     depends_on:
       - db
+    env_file:
+      - ./lrvl-server/.env
 
   client:
     build:

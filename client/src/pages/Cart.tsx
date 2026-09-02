@@ -1,5 +1,4 @@
 
-
 function Cart() {
   return (
     <div className="min-h-screen px-4 pt-24">
@@ -21,12 +20,12 @@ function Cart() {
 
         </div>
 
-        <div className="flex w-full max-w-md h-50 flex-col gap-2 rounded-md bg-(--bg-card) p-5 shadow-sm">
-          <h1 className="text-xl font-semibold text-left">Order Summary</h1>
-          <p>Subtotal</p>
-          <p className="text-lg font-semibold">Total</p>
+        <div className="flex w-68 h-50 flex-col gap-2 rounded-md p-5 border">
+          <h1 className="font-semibold text-left text-lg">Order Summary</h1>
+          <p className="">Subtotal</p>
+          <p className="">Total</p>
           <button
-            type="submit" className="rounded-sm p-2.5 mt-auto cursor-pointer bg-(--accent-charcoalBlue) text-(--bg-white)">
+            type="submit" className="rounded-sm p-2.5 mt-auto cursor-pointer bg-(--accent-orange) text-white">
             Checkout
           </button>
         </div>

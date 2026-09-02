@@ -4,6 +4,7 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import authRouter from "./routes/auth";
 import artworkRouter from "./routes/artwork";
+import ordersRouter from "./routes/order";
 
 const app = express();
 
@@ -16,6 +17,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use("/api/auth", authRouter);
 app.use("/api", artworkRouter);
+app.use("/api", ordersRouter);
 
 const PORT = 3000;
 

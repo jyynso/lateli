@@ -8,6 +8,7 @@ type ViewArtworkCardProps = {
 };
 
 interface ArtworkData {
+  id: number;
   imageUrl: string;
   name: string;
   artist: string;
@@ -23,8 +24,26 @@ export default function ViewArtworkCard({ isOpen, onClose, artwork }: ViewArtwor
   const [artworks, setArtworks] = useState<ArtworkData[]>([]);
   const [show, setShow] = useState(isOpen);
 
-  const handleCheckout = () => {
+  const handleCheckout = async () => {
+    try {
+      const res = await fetch('http://localhost:3000/api/orders', {
+        method: 'POST',
+        credentials: 'include',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ artworkId: artwork.id}),
+      });
 
+      if (res.status === 409) {
+        setError('This piece was just sold to someone else');
+        return;
+      }
+      if (!res.ok) throw new Error('Checkout failed');
+
+      const order = await res.json();
+    } catch (err) {
+      console.error(err);
+      setError('Something went wrong during checkout');
+    }
   };
 
   useEffect(() => {
@@ -84,7 +103,8 @@ export default function ViewArtworkCard({ isOpen, onClose, artwork }: ViewArtwor
             <p className="text-2xl font-semibold py-2">₱{artwork.price}</p>
             <button
               onClick={(e) => {
-                e.stopPropagation(); handleCheckout}}
+                e.stopPropagation(); 
+                handleCheckout()}}
                 className='m-3 mt-auto rounded-sm cursor-pointer p-3 shadow-md transition-all duration-50  bg-black text-white'>
                 Checkout
             </button>

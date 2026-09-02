@@ -5,7 +5,7 @@ function HomePage() {
     <div className='p-6 lg:px-20 min-h-screen'>
 
       <section id='hero' className="relative h-full">
-        <img className="absolute right-8 top-10 z-10 w-[48vw]" src="./pexels-orange.jpg" alt="" />
+        <img className="absolute right-8 top-10 z-10 w-[48vw]" src="./pexels-orange.webp" alt="" />
 
         <div className="relative z-20">
           <h1 className="text-[12vw] font-bold leading-none">
