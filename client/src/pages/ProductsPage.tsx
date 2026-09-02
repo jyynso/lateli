@@ -19,9 +19,10 @@ function ProductsPage() {
   const [artworks, setArtworks] = useState<ArtworkData[]>([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/artworks')
+    fetch('http://localhost:8000/api/artworks', { credentials: 'include' })
       .then(res => res.json())
       .then(data => {
+				console.log(data);
         setArtworks(data);
         setLoading(false);
       })
