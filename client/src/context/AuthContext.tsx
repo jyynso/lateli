@@ -13,12 +13,17 @@ const AuthContext = createContext<{
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User>(null);
   const [loading, setLoading] = useState(true);
-  const logout = () => {
-    setUser(null);
-  };
+
+	const logout = async () => {
+		await fetch('http://localhost:8000/api/logout', {
+			method: 'POST',
+			credentials: 'include',
+		});
+		setUser(null);
+	}
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/auth/userWho', { credentials: 'include' })
+    fetch('http://localhost:8000/api/user', { credentials: 'include' })
       .then(res => res.ok ? res.json() : null)
       .then(setUser)
       .finally(() => setLoading(false));
@@ -35,4 +40,4 @@ export const useAuth = () => {
   const ctx = useContext(AuthContext);
   if (!ctx) throw new Error("useAuth must be used inside AuthProvider");
   return ctx;
-};
+}; 
