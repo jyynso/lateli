@@ -14,16 +14,16 @@ services:
 
   server:
     build: 
-      context: ./lrvl-server
+      context: ./server
       dockerfile: server.dev
     ports:
       - "8000:8000"
     volumes:
-      - ./lrvl-server:/app
+      - ./server:/app
     depends_on:
       - db
     env_file:
-      - ./lrvl-server/.env
+      - ./server/.env
 
   client:
     build:
