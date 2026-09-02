@@ -14,5 +14,5 @@ An art marketplace where users can upload, browse, and buy artwork.
 - MySQL (Dockerized)
 - Laravel Sanctum (auth)
 - Supabase Storage for image files
-
+---
 - built as a learning project.
