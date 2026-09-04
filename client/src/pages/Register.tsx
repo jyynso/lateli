@@ -3,6 +3,8 @@ import { UserIcon, EnvelopeSimpleIcon, LockKeyIcon, EyeIcon, EyeClosedIcon } fro
 import { ZxcvbnFactory } from '@zxcvbn-ts/core'
 import * as zxcvbnCommonPackage from '@zxcvbn-ts/language-common'
 import * as zxcvbnEnPackage from '@zxcvbn-ts/language-en'
+import Alert from '../components/Alert';
+import { useNavigate } from 'react-router-dom';
 
 const pwdOptions = {
   translations: zxcvbnEnPackage.translations,
@@ -20,6 +22,8 @@ export default function Register() {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const zxcvbn = useMemo(() => new ZxcvbnFactory(pwdOptions), []); 
+	const [showAlert, setShowAlert] = useState(false);
+	const navigate = useNavigate();
 
   const pwdMatch = () => {
     return userData.password === userData.confirmPassword;
@@ -64,6 +68,7 @@ export default function Register() {
       return;
     };
 
+		setShowAlert(false)
     setLoading(true)
     try {
 			await fetch('http://localhost:8000/sanctum/csrf-cookie', { credentials: 'include' });
@@ -94,12 +99,19 @@ export default function Register() {
         return;
       }
 
-      console.log('Registered:', data);
-
     } catch (err) {
       setError('Could not reach server');
     } finally {
+			setShowAlert(true);
       setLoading(false);
+			
+			setTimeout(() => {
+				setShowAlert(false);
+			}, 1500);
+
+			setTimeout(() => {
+				navigate('/login');
+			}, 2000);
     }
 
   };
@@ -108,7 +120,8 @@ export default function Register() {
 
   return (
     <div className='flex items-center justify-center mt-10'>
-       <form onSubmit={handleSubmit} className='flex flex-col text-center w-sm p-5 gap-5 bg-white'>
+			<Alert showAlert={showAlert} title='Registration Successful' body='Your acccount has been created'/>
+      	<form onSubmit={handleSubmit} className='flex flex-col text-center w-sm p-5 gap-5 bg-white'>
           <h1 className='font-semibold mb-6 text-3xl'>Create Account</h1>
           <div className='flex items-center p-2 gap-2 border-2 focus-within:border-(--accent-sandyBrown)'>
             <UserIcon size={22} className='text-gray-400' />

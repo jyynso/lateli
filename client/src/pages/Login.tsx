@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import { EnvelopeSimpleIcon, LockKeyIcon, EyeClosedIcon, EyeIcon } from '@phosphor-icons/react/dist/ssr';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import Alert from '../components/Alert';
 
 function Login() {
   const [userData, setUserData] = useState({email: '', password: '', confirmPassword: ''});
   const [showPwd, setShowPwd] = useState(false);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+	const [showAlert, setShowAlert] = useState(false);
   const navigate = useNavigate();
   const { setUser } = useAuth();
 
@@ -54,18 +56,27 @@ function Login() {
     }
 
     setUser(data);
-    navigate("/products");
 
-  } catch (err) {
-    setError("Could not reach server");
-  } finally {
-    setLoading(false);
-  }	
+		} catch (err) {
+			setError("Could not reach server");
+		} finally {
+			setShowAlert(true);
+			setLoading(false);
+
+			setTimeout(() => {
+				setShowAlert(false);
+			}, 1500);
+
+			setTimeout(() => {
+				navigate("/products");
+			}, 2000);
+		}	
 	};
 
   return (
     <div className='flex items-center justify-center mt-50 lg:mt-20'>
-       <form onSubmit={handleSubmit} className='flex flex-col text-center w-sm p-5 gap-5  bg-white'>
+			<Alert showAlert={showAlert} title='Login Successful' body='You will now be redirected to artworks page' />
+      	<form onSubmit={handleSubmit} className='flex flex-col text-center w-sm p-5 gap-5  bg-white'>
           <h1 className='font-semibold text-3xl mb-6'>Login</h1>
           <div className='flex items-center p-2 gap-2 border-2 focus-within:border-(--accent-coral)'>
             <EnvelopeSimpleIcon size={22} className='text-gray-400' />
