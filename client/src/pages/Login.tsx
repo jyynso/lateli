@@ -22,39 +22,46 @@ function Login() {
   };
 
   const handleSubmit = async (e: React.SubmitEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setError('');
+  e.preventDefault();
+  setError('');
+  setLoading(true);
 
-    setLoading(true);
-    try {
-      const res = await fetch('http://localhost:3000/api/auth/login', {
-        method: 'POST',
-        credentials: 'include',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({
-          email: userData.email,
-          password: userData.password,
-        }),
-      });
-      
-      const data = await res.json();
+  try {
+    await fetch('http://localhost:8000/sanctum/csrf-cookie', { credentials: 'include' });
 
-      if(!res.ok) {
-        setError(data.error || "Login failed");
-        return;
-      }
-      
-      console.log('Logged in uwu', data);
-      setUser(data);
-      navigate("/products");
-      
-    } catch (err) {
-      setError("Could not reach server");
-    } finally {
-      setLoading(false);
+    const xsrfToken = decodeURIComponent(
+      document.cookie.match(/XSRF-TOKEN=([^;]+)/)?.[1] || ''
+    );
+
+    const res = await fetch('http://localhost:8000/api/login', {
+      method: 'POST',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-XSRF-TOKEN': xsrfToken,
+      },
+      body: JSON.stringify({
+        email: userData.email,
+        password: userData.password,
+      }),
+    });
+
+    const data = await res.json();
+
+    if (!res.ok) {
+      setError(data.error || "Login failed");
+      return;
     }
 
-  };
+    setUser(data);
+    navigate("/products");
+
+  } catch (err) {
+    setError("Could not reach server");
+  } finally {
+    setLoading(false);
+  }	
+	};
 
   return (
     <div className='flex items-center justify-center mt-50 lg:mt-20'>

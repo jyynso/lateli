@@ -66,13 +66,23 @@ export default function Register() {
 
     setLoading(true)
     try {
-      const res = await fetch('http://localhost:3000/api/auth/register', {
+			await fetch('http://localhost:8000/sanctum/csrf-cookie', { credentials: 'include' });
+
+			const xsrfToken = decodeURIComponent(
+				document.cookie.match(/XSRF-TOKEN=([^;]+)/)?.[1] || ''
+			);
+
+      const res = await fetch('http://localhost:8000/api/register', {
         method: 'POST',
         credentials: 'include',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+					'Content-Type': 'application/json',
+					'X-XSRF-TOKEN': xsrfToken,
+				 },
         body: JSON.stringify({
           email: userData.email,
           password: userData.password,
+					password_confirmation: userData.confirmPassword,
           name: userData.username,
         }),
       });
@@ -181,7 +191,7 @@ export default function Register() {
 
           {error && <p className='text-xs text-red-500'>{error}</p>}
 
-          <button type='submit' disabled={loading} className='text-sm p-2 bg-(--accent-charcoalBlue) text-white cursor-pointer'>
+          <button type='submit' disabled={loading} className='text-sm p-2 bg-black text-white cursor-pointer'>
             {loading ? 'Creating account...' : 'Submit'}
           </button>
         </form>
