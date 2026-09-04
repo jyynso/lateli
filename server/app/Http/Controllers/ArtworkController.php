@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class ArtworkController extends Controller
 {
-	public function index() 
+	public function artworks() 
 	{
 		return Artwork::with('user')->get();
 	}
