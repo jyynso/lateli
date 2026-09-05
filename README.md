@@ -9,10 +9,10 @@ An art marketplace where users can upload, browse, and buy artwork.
 - phosphor-icons
 
 **Backend**
-- PHP / Laravel
-- Eloquent ORM
-- MySQL (Dockerized)
-- Laravel Sanctum (auth)
-- Supabase Storage for image files
----
-- built as a learning project.
+- ASP.NET Core
+- Entity Framework Core
+- MySQL
+- JWT
+- Supabase Storage 
+
+built as a learning project.
