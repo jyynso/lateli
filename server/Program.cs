@@ -3,7 +3,8 @@ using server.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<AppDbContext>(options => 
+builder.Services.AddControllers();
+builder.Services.AddDbContext<AppDbContext>(options =>
 	options.UseMySql(
 		builder.Configuration.GetConnectionString("Default"),
 		ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("Default"))
@@ -11,6 +12,5 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 var app = builder.Build();
 
-app.MapGet("api/artworks", async (AppDbContext db) => await db.Artworks.ToListAsync());
-
+app.MapControllers();
 app.Run();
