@@ -6,7 +6,7 @@ using server.Models;
 namespace server.Controllers;
 
 [ApiController]
-[Route("api/controller")]
+[Route("api/[controller]")]
 public class ArtworksController : ControllerBase
 {
 	private readonly AppDbContext _context;
