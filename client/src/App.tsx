@@ -8,7 +8,6 @@ import Login from './pages/Login.tsx';
 import { AuthProvider } from './context/AuthContext.tsx';
 import Cart from './pages/Cart.tsx';
 import UploadArtwork from './pages/UploadArtworkPage.tsx'
-import Footer from './components/Footer.tsx';
 
   function App() {
 
@@ -25,7 +24,6 @@ import Footer from './components/Footer.tsx';
 							<Route path='/cart' element={<Cart />}/>
 							<Route path='/upload' element={<UploadArtwork />}/>
 						</Routes>
-						<Footer />
 					</BrowserRouter>
 				</div>
 			</AuthProvider>

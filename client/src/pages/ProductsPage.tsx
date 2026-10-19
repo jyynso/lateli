@@ -1,5 +1,4 @@
 import ArtworkCard from '../components/Artwork';
-import Filter from '../components/Filter';
 import { useEffect, useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 

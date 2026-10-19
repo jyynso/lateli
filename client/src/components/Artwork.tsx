@@ -1,4 +1,3 @@
-import { BasketIcon } from "@phosphor-icons/react/dist/ssr";
 import ViewCard from "./ViewArtworkCard";
 import { useState } from "react";
 
