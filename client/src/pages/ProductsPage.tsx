@@ -36,10 +36,10 @@ function ProductsPage() {
   console.log(user);
 
   return (
-    <div className='mb-20'>
-      <div className='p-7 bg-white '>
-        <h1 className='font-bold text-4xl text-center fade-in'>Artworks</h1>
-        <div className='mt-26 mx-auto flex flex-row flex-wrap justify-center gap-6 w-full lg:w-5xl stagger-fade-in'>
+    <div className="mb-20">
+      <div className="bg-white px-4 py-8 sm:px-7">
+        <h1 className="fade-in text-center text-3xl font-bold sm:text-4xl">Artworks</h1>
+        <div className="mx-auto mt-12 grid w-full max-w-5xl grid-cols-[repeat(auto-fit,minmax(min(100%,16rem),16rem))] justify-center gap-6 sm:mt-20 stagger-fade-in">
           {loading && <p className='text-center mt-10'>loading... uwu</p>}
           {error && <p className='text-center mt-10'>{error}</p>}
           {!loading && !error && (

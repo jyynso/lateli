@@ -16,8 +16,8 @@ function Artwork({ image, name, artist, description, medium, price, user, showDe
 
   return (
     <>
-      <div className='flex flex-col group relative w-full lg:w-50'>
-        <div className='group relative h-50 w-full overflow-hidden'>
+      <div className='group relative flex w-full min-w-0 flex-col'>
+        <div className='group relative mx-auto aspect-square w-full max-w-64 overflow-hidden'>
           <img src={image} alt={name} onClick={() => setIsModalOpen(true)} 
             className='h-full w-full object-cover cursor-pointer transition-transform duration-200 hover:scale-103'/>
           <div aria-hidden='true' className='pointer-events-none absolute inset-0 flex items-end bg-black/50 p-3 text-white opacity-0 transition-opacity duration-200 group-hover:opacity-100'>

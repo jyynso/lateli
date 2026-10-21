@@ -9,7 +9,7 @@ function ArtworkContainer() {
 	const [artworks, setArtworks] = useState<ArtworkData[]>(mockArtworks);
 
 	return (
-		<div className="flex flex-wrap gap-4 stagger-fade-in">
+		<div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,16rem),16rem))] justify-center gap-4 stagger-fade-in">
 			{!loading && !error && (
 				artworks.map((artwork: any) => (
 					<Artwork 
