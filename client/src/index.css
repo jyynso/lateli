@@ -16,3 +16,43 @@ html::-webkit-scrollbar,
 body::-webkit-scrollbar {
   display: none;
 }
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fade-in 700ms ease-in-out both;
+}
+
+.fade-in-delay-1 {
+  animation-delay: 200ms;
+}
+
+.fade-in-delay-2 {
+  animation-delay: 400ms;
+}
+
+.stagger-fade-in > * {
+  animation: fade-in 700ms ease-in-out both;
+}
+
+.stagger-fade-in > :nth-child(1) { animation-delay: 200ms; }
+.stagger-fade-in > :nth-child(2) { animation-delay: 400ms; }
+.stagger-fade-in > :nth-child(3) { animation-delay: 600ms; }
+.stagger-fade-in > :nth-child(4) { animation-delay: 800ms; }
+.stagger-fade-in > :nth-child(5) { animation-delay: 1000ms; }
+.stagger-fade-in > :nth-child(6) { animation-delay: 1200ms; }
+.stagger-fade-in > :nth-child(n + 7) { animation-delay: 1400ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in,
+  .stagger-fade-in > * {
+    animation: none;
+  }
+}

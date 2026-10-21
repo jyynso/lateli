@@ -38,8 +38,8 @@ function ProductsPage() {
   return (
     <div className='mb-20'>
       <div className='p-7 bg-white '>
-        <h1 className='font-bold text-4xl text-center'>Artworks</h1>
-        <div className='mt-26 mx-auto flex flex-row flex-wrap justify-center gap-6 w-full lg:w-5xl'>
+        <h1 className='font-bold text-4xl text-center fade-in'>Artworks</h1>
+        <div className='mt-26 mx-auto flex flex-row flex-wrap justify-center gap-6 w-full lg:w-5xl stagger-fade-in'>
           {loading && <p className='text-center mt-10'>loading... uwu</p>}
           {error && <p className='text-center mt-10'>{error}</p>}
           {!loading && !error && (

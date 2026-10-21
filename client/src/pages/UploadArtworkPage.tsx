@@ -53,11 +53,11 @@ function UploadArtwork() {
   return (
     <div>
       <div className="flex mb-20 lg:mt-2 flex-col items-center justify-center px-4 py-8 sm:px-6">
-        <h1 className="font-semibold text-2xl mb-10">Upload an Artwork</h1>
+        <h1 className="font-semibold text-2xl mb-10 fade-in">Upload an Artwork</h1>
         <form
           onSubmit={handleSubmit}
           className="flex w-full max-w-2xl flex-col overflow-hidden sm:flex-row">
-          <div className="group relative h-auto sm:w-sm w-full">
+          <div className="group relative h-auto sm:w-sm w-full fade-in fade-in-delay-1">
             <img src={previewUrl} className="object-cover w-full h-90" alt="Artwork preview" />
             <label className="absolute inset-0 flex cursor-pointer items-center justify-center bg-black/50 opacity-0 transition-opacity group-hover:opacity-100 sm:rounded-l-md">
               <span className="text-sm font-medium text-white">Select Image</span>
@@ -65,7 +65,7 @@ function UploadArtwork() {
             </label>
           </div>
 
-          <div className="flex w-full flex-col mt-6 md:mt-0 items-center gap-4 p-4 ml-none lg:ml-4 sm:w-70 sm:p-5">
+          <div className="flex w-full flex-col mt-6 md:mt-0 items-center gap-4 p-4 ml-none lg:ml-4 sm:w-70 sm:p-5 fade-in fade-in-delay-2">
             <div className="flex w-full items-center gap-2 border-2 p-2 focus-within:border-(--accent-coral) sm:w-60">
               <input type="text" onChange={(e) => setTitle(e.target.value)} placeholder="Artwork name" className="w-full bg-transparent text-sm outline-none" />
             </div>

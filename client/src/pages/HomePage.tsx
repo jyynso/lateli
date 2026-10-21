@@ -5,8 +5,12 @@ function HomePage() {
   return (
     <div className='p-6 lg:px-20 min-h-screen'>
 			<div className="flex flex-row">
-				<Sidebar />
-				<ArtworkContainer />
+				<div className="fade-in">
+					<Sidebar />
+				</div>
+				<div className="fade-in fade-in-delay-1">
+					<ArtworkContainer />
+				</div>
 			</div>
     </div>
   );

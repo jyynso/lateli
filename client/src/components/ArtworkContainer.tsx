@@ -9,7 +9,7 @@ function ArtworkContainer() {
 	const [artworks, setArtworks] = useState<ArtworkData[]>(mockArtworks);
 
 	return (
-		<div className="flex flex-wrap gap-4">
+		<div className="flex flex-wrap gap-4 stagger-fade-in">
 			{!loading && !error && (
 				artworks.map((artwork: any) => (
 					<Artwork 
