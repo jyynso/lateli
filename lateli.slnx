@@ -1,6 +1,6 @@
 <Solution>
   <Project Path="client/client.esproj">
-    <Deploy />
+    <Deploy Solution="Release|*" />
   </Project>
   <Project Path="server/server.csproj" />
 </Solution>

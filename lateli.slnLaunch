@@ -3,7 +3,7 @@
     "Name": "New Profile",
     "Projects": [
       {
-        "Path": "client\\client.csproj",
+        "Path": "client\\client.esproj",
         "Action": "Start"
       },
       {
