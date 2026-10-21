@@ -39,7 +39,6 @@ function ProductsPage() {
     <div className='mb-20'>
       <div className='p-7 bg-white '>
         <h1 className='font-bold text-4xl text-center'>Artworks</h1>
-        {/* <Filter className='lg:ml-34' /> */}
         <div className='mt-26 mx-auto flex flex-row flex-wrap justify-center gap-6 w-full lg:w-5xl'>
           {loading && <p className='text-center mt-10'>loading... uwu</p>}
           {error && <p className='text-center mt-10'>{error}</p>}
