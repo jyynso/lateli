@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-archivo: 'Archivo', sans-serif;
+  --accent-orange: #c94401;
+}
+
+html, body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  transition: --bg-light 0.4s ease, --bg-card 0.4s ease, --text-black 0.4s ease;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
